@@ -3,6 +3,7 @@
 1. Pull this repo to the root folder (same lvl as `package.json`) to get `lab/` folder.
 2. Add this to your base layout (commonly `base.svelte`) to the very top of your `<script>` tag:
 ```js
+// LAB
 import '/lab/css/lab.css';
 import '/lab/css/reset.css';
 import '/lab/css/buttons.css';
@@ -18,6 +19,7 @@ import '/lab/css/controls/chips.css';
 ```
 3. Add this to your `all.js`:
 ```js
+// LAB
 import '/lab/js/extend.js';
 export { Helper } from '/lab/js/helper.js';
 export { Select } from '/lab/js/select.js';
