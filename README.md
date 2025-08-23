@@ -31,3 +31,60 @@ export { svg } from '/lab/js/svg.js';
 # Usage
 
 ... demo is in progress ...
+
+# SELECT
+
+#### Basic select
+```html
+<select class="SELECT">
+    <option>Option</option>
+</select>
+```
+
+#### Select, adjusted by option's width
+```html
+<script>
+    import {Select} from '/all.js';
+    // or
+    import {Select} from '/lab/js/select.js';
+</script>
+<select class="SELECT" use:Select>
+    <option>Option</option>
+</select>
+```
+
+#### Select, with icon before select
+```html
+<div class="SELECT_WITH_ICON">
+    <span class="SELECT_ICON">
+        {@html Icons.timezone({size: 24})}
+    </span>
+    <select class="SELECT _INLINE" use:Select>
+        <option>Option</option>
+    </select>
+</div>
+```
+
+#### Select, with icon inside select
+```html
+<div class="SELECT_WITH_ICON _ICON_INSIDE">
+    <span class="SELECT_ICON">
+        {@html Icons.timezone({size: 24})}
+    </span>
+    <select class="SELECT _INLINE" use:Select>
+        <option>Option</option>
+    </select>
+</div>
+```
+
+#### Select, with icon inside select, styled as label
+```html
+<div class="SELECT_WITH_ICON _ICON_AS_LABEL">
+    <span class="SELECT_ICON">
+        {@html Icons.timezone({size: 24})}
+    </span>
+    <select class="SELECT _INLINE" use:Select>
+        <option>Option</option>
+    </select>
+</div>
+```
