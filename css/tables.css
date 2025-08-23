@@ -1,0 +1,22 @@
+.TABLE {box-shadow:0 0 0 1px var(--table-border-color);--table-padding:6px;}
+.TABLE._STRETCH {width:100%}
+
+    /* Строки */
+    .TABLE > :is(thead, tbody, tfoot) > tr {background:#fff;}
+    .TABLE > :is(thead, tbody, tfoot) > tr:not(:first-child) {border-top:1px solid var(--table-border-color)}
+        /* Ячейки */
+        .TABLE > * > tr > :is(th, td) {padding:var(--table-padding);vertical-align:middle;}
+
+    /* Строки в шапке */
+    .TABLE > thead > tr {border-bottom:1px solid var(--table-border-color);background:var(--body-background-color-x2);}
+        /* Ячейки в шапке */
+        .TABLE > thead > tr > th {font-size:var(--font-size-small);font-weight:var(--bold);text-align:center;}
+
+    /* Строки в боди */
+    .TABLE > tbody > tr {}
+    .TABLE._ZEBRA > tbody > tr:nth-child(even) {background:var(--body-background-color-half);}
+        /* Ячейки в боди */
+        .TABLE > tbody > tr > :is(th, td) {text-align:left;}
+
+    /* Sticky */
+    .TABLE_STICKY {position:sticky;top:0;box-shadow: 0 0 0 1px var(--table-border-color);}

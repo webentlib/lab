@@ -1,0 +1,22 @@
+.CARDS {box-shadow:0 0 0 1px var(--table-border-color);--cards-padding:18px;}
+.CARDS._STRETCH {width:100%}
+
+    /* Строки */
+    .CARDS > :is(thead, tbody, tfoot) > tr {background:#fff;}
+    .CARDS > :is(thead, tbody, tfoot) > tr:not(:first-child) {border-top:1px solid var(--table-border-color)}
+
+    /* Строки в шапке */
+    .CARDS > thead > tr {border-bottom:1px solid var(--table-border-color);background:rgba(255,255,255,0.5);}
+        .CARDS > thead > tr > :is(th, td) {}
+        .CARDS > thead > tr > :is(th, td):not(:last-child) {}
+
+        /* Ячейки */
+        .CARDS > :is(thead, tbody, tfoot) > tr > :is(th, td) {padding:var(--cards-padding) calc(var(--cards-padding) / 2);vertical-align:middle;}
+        .CARDS > :is(thead, tbody, tfoot) > tr > :is(th, td):first-child {padding-left:var(--cards-padding);}
+        .CARDS > :is(thead, tbody, tfoot) > tr > :is(th, td):last-child {padding-right:var(--cards-padding);}
+
+        /* Коллапсим всё, кроме первой колонки */
+        .CARDS._NOWRAP_EXCEPT_FIRST > :is(thead, tbody, tfoot) > tr > :is(th, td):not(:first-child) {width:1px;white-space:nowrap;}
+
+        .CARDS_SEPARATOR {position:relative;}
+        .CARDS_SEPARATOR:after {content:'';position:absolute;top:var(--cards-padding);bottom:var(--cards-padding);display:block;width:1px;background:var(--separator);}

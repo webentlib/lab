@@ -1,0 +1,46 @@
+.CHIPS {
+    display:inline-flex;
+    background:var(--control-border-color);
+    border-radius:var(--border-radius);
+    min-height:var(--control-height);
+}
+.CHIPS._STRETCH {display:flex;}
+
+    .CHIP {
+        /* DISABLE SELECT */
+        user-select:none;
+        -webkit-user-select:none; /* Safari fallback only */
+        -moz-user-select:none;    /* Firefox */
+        -ms-user-select:none;     /* IE10+ */
+
+        /* DEFAULT */
+        transition:background-color var(--button-transition-speed) ease;
+        border-radius:var(--border-radius);
+        min-height:var(--control-height);
+        font-size:calc(var(--control-font-size));
+        border:var(--control-border-width) solid var(--control-border-color);
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:var(--button-font-weight);
+        cursor:pointer;
+        padding:0 18px;
+        position:relative;
+    }
+    .CHIP:not(:first-child) {margin-left:-1px;}
+    .CHIPS._STRETCH .CHIP {flex-grow:1;padding:0}
+
+    .CHIP:hover {
+        background:#fff;
+    }
+    .CHIP:active {
+        background:rgba(255,255,255,0.5);
+    }
+    .CHIP:is(._CURRENT, :has([type="radio"]:checked)) {
+        background:var(--button-blue);
+        border-color:var(--button-blue);
+        color:#fff;
+        z-index:1;
+    }
+
+        .CHIP input {display:none;}

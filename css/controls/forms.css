@@ -1,0 +1,67 @@
+.FORM {max-width:calc(360px + 24px);margin:24px auto;}
+    .FAULTS {margin-bottom:12px;}
+        .FAULT {color:var(--primary);font-size:14px;font-weight:var(--bold)}
+        .FAULT:not(:last-child) {margin-bottom:6px;}
+
+    .FIELDS {display:flex;}
+
+    .FIELD:not(:last-child) {margin-bottom:18px;}
+
+    .FIELDS .FIELD {margin-bottom:0;}
+    .FIELDS .FIELD:not(:last-child) {padding-right:12px;}
+
+        .LABEL {font-size:15px;line-height:24px;min-height:24px;font-weight:var(--bold);display:block;}
+        span.LABEL {display:inline-block;}
+        div.LABEL, label.LABEL {margin:0 0 4px;}
+
+        .FIELD._OPTIONAL .LABEL {color:var(--optional)}
+        .FIELD:has(input:focus) .LABEL {}
+        .FIELD._ERROR .INPUT:focus {outline:3px solid var(--error);}
+        /* [Тут контролы, у них своя логика] */
+        .ERRORS {}
+            .ERROR {color:var(--error);font-size:12px;margin-left:auto;font-weight:var(--bold);}
+            .ERRORS .ERROR {margin-top:3px;}
+        .HELP_TEXT {margin-top:3px;font-size:13px;}
+    .FORM_FOOTER {margin-top:24px;}
+
+.FORM._LARGE {}
+    .FORM._LARGE .FAULTS {margin-bottom:24px;}
+        .FORM._LARGE .FAULT {font-size:15px;}
+        .FORM._LARGE .FAULT:not(:last-child) {}
+    .FORM._LARGE .FIELD:not(:last-child) {margin:0 0 24px;}
+        .FORM._LARGE .LABEL {font-size:16px;}
+        .FORM._LARGE .FIELD:has(input:focus) .LABEL {}
+        .FORM._LARGE .FIELD._ERROR .INPUT:focus {}
+        .FORM._LARGE .ERROR {margin-top:6px;font-size:14px;}
+        .FORM._LARGE .HELP_TEXT {margin-top:6px;}
+    .FORM._LARGE .FORM_FOOTER {}
+
+@media (max-width:767px) {
+    .FORM {margin:12px auto;padding:0 12px;}
+}
+
+/* https://css-tricks.com/snippets/css/shake-css-keyframe-animation/ */
+.SHAKE {
+    animation:shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+    transform:translate3d(0, 0, 0);
+    backface-visibility:hidden;
+    perspective:1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform:translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform:translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform:translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform:translate3d(4px, 0, 0);
+  }
+}

@@ -1,0 +1,140 @@
+:root {
+    /* OVERRIDE NEXT VARS IN CUSTOM STYLES */
+
+    --header-height:0;
+
+    /* COMMON */
+
+    --border-radius:2px;
+    --transition-speed:0.2s;
+    --bold:600;
+    --semibold:500;
+
+    --font-size-tiny:12px;
+    --font-size-small:15px;
+    --font-size:16px;
+    --font-size-big:18px;
+    --font-size-large:20px;
+    --font-size-huge:22px;
+
+    /* COLORS */
+
+    --blue:   hsl(220, 90%, 55%);
+    --green:  hsl(140, 75%, 40%);
+    --red:    hsl(0, 100%, 50%);
+    --orange: hsl(15, 80%, 50%);
+    --gray:   hsl(0, 0%, 50%);
+    --dark:   hsl(0, 0%, 0%);
+
+    /* COMMON COLORS */
+
+    --link:   var(--blue);
+    --error:  var(--orange);
+    --success:hsl(140, 75%, 35%);
+
+    --select-placeholder:  hsl(0, 0%, 40%); /* Для дефолтного значения селекта и т.д. */
+    --placeholder:         hsl(0, 0%, 70%); /* Всем инпутам, текстареям, контентедитаблам и т.д. */
+    --loader:              hsl(0, 0%, 60%); /* Лоадер. Не забыть также поменять и в buttons.css .BUTTON._LOADING */
+    --table-border-color:  hsl(0, 0%, 85%);
+    --separator:           hsl(0, 0%, 90%); /* Для <hr>; бордера в ленте материалов */
+    --popup-outside:       rgba(0,0,0,0.8); /* Цвет фона всех попапов */
+
+    --secondary:           hsl(0, 0%, 40%); /* Для дат внутри материалов */
+    --optional:            hsl(0, 0%, 40%); /* Для дат внутри материалов */
+    --tip:                 hsl(0, 0%, 50%); /* Универсальный серый цвет для подсказок и т.д. */
+    --meta:                hsl(0, 0%, 60%); /* Для мелких сносок */
+
+    /* MENU LINKS */
+
+    --hover:  hsl(0, 0%, 96%);
+    --active: hsl(0, 0%, 88%);
+    --current:hsl(0, 0%, 92%);
+
+    --hover-alpha:  rgba(0,0,0,0.02);
+    --active-alpha: rgba(0,0,0,0.06);
+    --current-alpha:rgba(0,0,0,0.04);
+
+    /* HIGHLIGHT */
+
+    --highlight:       hsl(0, 0%, 78%);
+    --highlight-blue:  var(--blue);
+    --highlight-green: var(--green);
+    --highlight-red:   var(--red);
+    --highlight-orange:var(--orange);
+    --highlight-gray:  var(--gray);
+    --highlight-dark:  var(--dark);
+
+    --highlight-bleak:       hsl(0, 0%, 95%);
+    --highlight-bleak-blue:  color-mix(in oklab, var(--blue),   #fff 90%);
+    --highlight-bleak-green: color-mix(in oklab, var(--green),  #fff 90%);
+    --highlight-bleak-red:   color-mix(in oklab, var(--red),    #fff 90%);
+    --highlight-bleak-orange:color-mix(in oklab, var(--orange), #fff 90%);
+    --highlight-bleak-gray:  color-mix(in oklab, var(--gray),   #fff 90%);
+    --highlight-bleak-dark:  color-mix(in oklab, var(--dark),   #fff 90%);
+
+    /* CONTROLS */
+
+    --control-base-font-size:16px;
+    --control-base-height:36px;
+    --control-outline:hsl(220, 100%, 55%);
+    --control-hover:hsl(220, 100%, 65%);
+    --control-active:hsl(220, 100%, 45%);
+
+    --control-border-color:hsl(0, 0%, 80%);
+    --control-border-color-hover:hsl(0, 0%, 75%);
+    --control-border-color-active:hsl(0, 0%, 65%);
+
+    --control-transition-speed:0.1s;
+    --control-border-width:1px;
+
+    /* BUTTONS */
+
+    --button-font-weight:500;
+
+    --button-border-width:1px;
+    --button-border-style:solid; /* outset is also nice */
+
+    --button-focus-outline-width:3px;
+    --button-outline-style:solid;
+
+    --button-border-radius:var(--border-radius);
+    --button-transition-speed:var(--transition-speed);
+
+    /* Default */
+
+    --button-default-font-size:16px;
+    --button-default-height:36px;
+
+    --button-default-text-color:#000;
+
+    --button-default-background:         #fff;
+    --button-default-background-hover:   var(--hover-alpha);
+    --button-default-background-active:  var(--active-alpha);
+    --button-default-background-current: var(--current-alpha);
+
+    --button-default-border-color:        hsl(0, 0%, 80%);
+    --button-default-border-color-hover:  hsl(0, 0%, 75%);
+    --button-default-border-color-active: hsl(0, 0%, 70%);
+    --button-default-border-color-current:hsl(0, 0%, 65%);
+
+    --button-default-outline-color:hsl(0, 0%, 80%);
+
+    /* Colored */
+
+    --button-colored-font-color:#fff;
+    --button-colored-border-width:0px; /* px is required even if 0px */
+    --button-colored-border-style:solid; /* outset is also nice */
+    --button-colored-border-color:rgba(0,0,0,0.15);
+
+    --button-blue:       var(--blue);
+    --button-green:      var(--green);
+    --button-red:        var(--red);
+    --button-orange:     var(--orange);
+    --button-gray:       var(--gray);
+    --button-dark:       var(--dark);
+    --button-monochrome: var(--dark);
+
+    --button-group-label-text-color:hsl(0, 0%, 50%);
+    --button-group-label-solid-background:hsl(0, 0%, 95%);
+    --button-group-label-border-color:var(--button-border-color);
+}

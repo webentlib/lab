@@ -1,0 +1,286 @@
+/*
+Best for <a> and <button> tags!
+Unexpected behaviour for <input type="button|submit|reset"> and something like <span> etc.
+
+Suggests itself that loaders background-image svg should be based on base colors.
+Now, its not technically convenient, and probably dab from perspective of good design.
+*/
+.BUTTON, .BUTTONS_LABEL {
+	/* RESET */
+	box-sizing:border-box;  /* For both — just in case there are no global style */
+	margin:0;               /* For buttons, they have some margin (in mobile Chrome) */
+	text-decoration:none;   /* For <a> */
+
+	/* DISABLE SELECT */
+    user-select:none;
+	-webkit-user-select:none; /* Safari fallback only */
+    -moz-user-select:none;    /* Firefox */
+    -ms-user-select:none;     /* IE10+ */
+
+	/* DISPLAY */
+	display:inline-flex;      /* For <a>s in first place. Also, it'll be easy to deal with icons inside, and not bother about whitespaces between elements */
+	align-items:center;       /* — align vertically */
+	justify-content:center;   /* — align items horizontally in case of no padding (_SQUARE and _ROUND), and also — for possible custom styles (padding and width) */
+	text-align:left;          /* — align text horizontally for multiline content */
+
+	/* COMMON STYLES */
+	transition:background-color var(--button-transition-speed) ease; /* Make background-color change smooth based on global variable; ease — nicest effect */
+	border-radius:var(--button-border-radius);                       /* Global variable used */
+
+	font-weight:var(--button-font-weight);
+
+	font-size:var(--button-font-size);
+	min-height:var(--button-height); 		                             /* Several things are based on height — so, let's specify it later, in SIZE block */
+	min-width:var(--button-height);
+	color:var(--button-text-color);
+	background-color:var(--button-background); /* could not be just "background" — "background-color" used because _LOADING has image */
+
+	border-width:var(--button-border-width);
+	border-style:var(--button-border-style);
+	border-color:var(--button-border-color);
+
+	--button-outline-width:0;
+	outline-width:var(--button-outline-width);
+	outline-style:var(--button-outline-style);
+	--button-outline-color:var(--button-default-outline-color);
+	outline-color:var(--button-outline-color);
+	
+	--button-padding:calc(var(--button-height) / 2 - var(--button-border-width) - 1px); /* In case of 36 — padding 'll be 16 */
+	padding:0 var(--button-padding);
+	
+	line-height:calc(var(--button-height) / 2);                     /* Let it be half of height, substract 2 for _BORDERED (it could be 1, but then it woldnot be even) */
+	
+	position:relative;
+	--button-z-index:0;
+	z-index:var(--button-z-index);
+
+	/* DEFAULT BUTTON */
+	--button-font-size:var(--button-default-font-size);
+	--button-height:var(--button-default-height);
+	--button-text-color:var(--button-default-text-color);
+
+	--button-background:        var(--button-default-background);
+	--button-background-hover:  var(--button-default-background-hover);
+	--button-background-active: var(--button-default-background-active);
+	--button-background-current:var(--button-default-background-current);
+
+    --button-border-color:        var(--button-default-border-color);
+    --button-border-color-hover:  var(--button-default-border-color-hover);
+    --button-border-color-active: var(--button-default-border-color-active);
+    --button-border-color-current:var(--button-default-border-color-current);
+}
+
+/* PADDING */
+
+@media (max-width:767px) {
+	.BUTTON {
+		--button-padding:calc(var(--button-height) / 2 - var(--button-border-width) - 3px); /* In case of 36 — padding will be 14 */
+	}
+}
+
+/* POINTER */
+
+.BUTTON,
+.BUTTON * {
+	cursor:pointer; /* It can be radio button inside for example, that has default cursor forced. Make it pointer also. */
+}
+
+/* DISABLED */
+
+.BUTTON:is(._DISABLED, [disabled]) {opacity:0.8;}
+.BUTTON:is(._DISABLED, [disabled]),
+.BUTTON:is(._DISABLED, [disabled]) * {cursor:default;}
+
+/* HOVER / ACTIVE / CURRENT / FOCUS */
+
+@media (hover:hover) {
+.BUTTON:not(._DISABLED, [disabled]):hover           {background-color:var(--button-background-hover);  border-color:var(--button-border-color-hover);  }}
+.BUTTON:not(._DISABLED, [disabled]):active          {background-color:var(--button-background-active); border-color:var(--button-border-color-active); }
+.BUTTON:is(._CURRENT, :has([type="radio"]:checked)) {background-color:var(--button-background-current);border-color:var(--button-border-color-current);}
+.BUTTON:focus-visible                               {--button-outline-width:var(--button-focus-outline-width);}
+
+/* LINK */
+
+.BUTTON._LINK {
+	--button-color:var(--button-blue);
+	--button-border-width:0px/* px is required here */;
+	--button-background:transparent;
+}
+
+/* COLORS */
+
+.BUTTON._BLUE       {--button-color:var(--button-blue)}
+.BUTTON._GREEN      {--button-color:var(--button-green)}
+.BUTTON._RED        {--button-color:var(--button-red)}
+.BUTTON._ORANGE     {--button-color:var(--button-orange)}
+.BUTTON._GRAY       {--button-color:var(--button-gray)}
+.BUTTON._DARK       {--button-color:var(--button-dark)}
+
+.BUTTON:is(._BLUE, ._GREEN, ._RED, ._ORANGE, ._GRAY, ._DARK):not(:is(._BORDERED, ._LINK)) {
+	color:var(--button-colored-font-color);
+	border-width:var(--button-colored-border-width);
+	border-color:var(--button-colored-border-color);
+
+	--button-background:var(--button-color);
+	--button-background-hover:color-mix(in oklab, var(--button-color), #fff 15%);
+	--button-background-active:color-mix(in oklab, var(--button-color), #000 15%);
+	--button-background-current:color-mix(in oklab, var(--button-color), #fff 20%);
+
+	--button-outline-color:color-mix(in oklab, var(--button-color), #fff 65%);
+}
+
+.BUTTON._DARK_FONT {color:var(--button-dark);}
+
+/* BORDERED */
+
+.BUTTON:is(._BORDERED, ._LINK) {
+	--button-text-color:var(--button-color);
+
+	--button-border-color:var(--button-color);
+	--button-border-color-hover:var(--button-color);
+	--button-border-color-active:var(--button-color);
+	--button-border-color-current:var(--button-color);
+
+	--button-background:transparent;
+	--button-background-hover:color-mix(in oklab, var(--button-color), #fff 80%);
+	--button-background-active:color-mix(in oklab, var(--button-color), #fff 70%);
+	--button-background-current:color-mix(in oklab, var(--button-color), #fff 90%);
+}
+
+/* SIZE */
+
+:is(.BUTTON, .BUTTONS_LABEL)._TINY  {--button-height:calc(var(--button-default-height) - 12px);--button-font-size:calc(var(--button-default-font-size) - 2px);}
+:is(.BUTTON, .BUTTONS_LABEL)._SMALL {--button-height:calc(var(--button-default-height) - 6px); --button-font-size:calc(var(--button-default-font-size) - 1px);}
+:is(.BUTTON, .BUTTONS_LABEL)        {--button-height:var(--button-default-height);             --button-font-size:var(--button-default-font-size);}
+:is(.BUTTON, .BUTTONS_LABEL)._BIG   {--button-height:calc(var(--button-default-height) + 6px); --button-font-size:calc(var(--button-default-font-size) + 2px);}
+:is(.BUTTON, .BUTTONS_LABEL)._LARGE {--button-height:calc(var(--button-default-height) + 12px);--button-font-size:calc(var(--button-default-font-size) + 4px);}
+:is(.BUTTON, .BUTTONS_LABEL)._HUGE  {--button-height:calc(var(--button-default-height) + 18px);--button-font-size:calc(var(--button-default-font-size) + 6px);}
+
+/* LOADING */
+
+.BUTTON {                         /* Let's set background params for ._LOADING, so "loader" will not smoothly jump when "transition:all 0.1s ease;" set somewhere globally */
+	background-size:auto 120%;    /* 120% of button height, established empirically, guess it depends on svg, specified next, probably it has spaces */
+	background-position:center;   /* Works both for horizontal and vertical */
+	background-repeat:no-repeat;
+}
+.BUTTON._LOADING {
+	color:transparent !important; /* Make it !important, since .BUTTON._BORDERED._[COLOR] also overrides color and have 3 classes combined, so have more css weight */
+}
+.BUTTON._LOADING                                                                              {background-image:url('data:image/svg+xml,<svg fill="hsl(0, 0%, 60%)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve"><path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"><animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"/></path></svg>')}
+.BUTTON._LOADING:not(._BORDERED, ._LINK):is(._BLUE, ._GREEN, ._RED, ._ORANGE, ._GRAY, ._DARK) {background-image:url('data:image/svg+xml,<svg fill="white"           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve"><path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"><animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"/></path></svg>')}
+
+/* ICONS */
+
+.BUTTON._LEFT_ICON  {padding-left:0;}
+.BUTTON._RIGHT_ICON  {padding-right:0;}
+
+.BUTTON:is(._TOP_ICON, ._BOTTOM_ICON) {height:auto;flex-direction:column;}
+
+.BUTTON._TOP_ICON    {padding-bottom:calc(var(--button-height) / 4 - var(--button-border-width));}
+.BUTTON._BOTTOM_ICON {padding-top:calc(var(--button-height) / 4 - var(--button-border-width));}
+
+.BUTTON._LEFT_ICON   *:is(svg, .ICON) {margin-left:calc(var(--button-height) / 4 - var(--button-border-width));margin-right:calc(var(--button-height) / 6 - var(--button-border-width));}
+.BUTTON._RIGHT_ICON  *:is(svg, .ICON) {margin-left:calc(var(--button-height) / 6 - var(--button-border-width));margin-right:calc(var(--button-height) / 4 - var(--button-border-width));}
+.BUTTON._TOP_ICON    *:is(svg, .ICON) {margin-top: calc(var(--button-height) / 4 - var(--button-border-width));margin-bottom:calc(var(--button-height) / 6 - var(--button-border-width));}
+.BUTTON._BOTTOM_ICON *:is(svg, .ICON) {margin-top: calc(var(--button-height) / 6 - var(--button-border-width));margin-bottom:calc(var(--button-height) / 4 - var(--button-border-width));}
+
+.BUTTON svg, .BUTTON_ICON {
+	flex-shrink:0;  /* Since button is inline-flex, it could be shrinked when it's not enough space */
+	max-height:calc(var(--button-height) - var(--button-border-width) * 2); /* Let's set height for oversized icons; could be overwritten by explicit style attr on <svg> tag; do it on height, not on width by obvious reasons */
+	max-width: calc(var(--button-height) - var(--button-border-width) * 2); /* Let's set height for oversized icons; could be overwritten by explicit style attr on <svg> tag; do it on height, not on width by obvious reasons */
+}
+
+@media (max-width:767px) {
+	.BUTTON._NO_ICON_ON_MOBILE._LEFT_ICON {padding-left:var(--button-padding);}
+	.BUTTON._NO_ICON_ON_MOBILE._RIGHT_ICON {padding-right:var(--button-padding);}
+	.BUTTON._NO_ICON_ON_MOBILE._TOP_ICON {padding-bottom:0;}
+	.BUTTON._NO_ICON_ON_MOBILE._RIGHT_ICON {padding-top:0;}
+
+	.BUTTON._NO_ICON_ON_MOBILE *:is(svg, .BUTTON_ICON) {display:none}
+}
+
+/* ROUNDED */
+
+.BUTTON._ROUNDED {border-radius:50vh;}
+
+/* SYMMETRIC */
+
+.BUTTON._SQUARE {padding:0;width:var(--button-height);flex-shrink:0;flex-basis:var(--button-height);}
+.BUTTON._ROUND  {padding:0;width:var(--button-height);flex-shrink:0;flex-basis:var(--button-height);border-radius:calc(var(--button-height) / 2);}
+
+/* MULTILINE */
+
+.BUTTON._MULTILINE {padding-top:calc(var(--button-padding) / 2);padding-bottom:calc(var(--button-padding) / 2);}
+
+/* GROUP */
+
+.BUTTONS {
+	display:inline-flex; /* Probably it'll be better than just block flex */
+}
+.BUTTONS._STRETCH {display:flex;}
+	.BUTTONS._STRETCH .BUTTON {flex-grow:1;}
+
+	.BUTTONS .BUTTON {
+		align-self:stretch;              /* Some buttons could be wider (or taller), some narrow (or thinner) based on flex-direction — let them be the same as widest, so... */
+		height:auto;                     /* ... in case of horizontal group — let them adjust tallest one ... */
+		min-height:var(--button-height); /* ... but limit with min-height instead ... */
+		z-index:var(--button-z-index);   /* To overlap BUTTONS_LABEL if it has borders */
+	}
+	.BUTTONS .BUTTON:not(:first-child):not(:last-child) {
+		border-radius:0;
+	}
+	.BUTTONS:not(._VERTICAL) .BUTTON:first-child {border-top-right-radius:0;border-bottom-right-radius:0;}
+	.BUTTONS:not(._VERTICAL) .BUTTON:last-child  {border-top-left-radius:0;border-bottom-left-radius:0;}
+
+	.BUTTONS .BUTTON:is(:hover, :active)                         {z-index:calc(var(--button-z-index) + 1);}
+	.BUTTONS .BUTTON:is(._CURRENT, :has([type="radio"]:checked)) {z-index:calc(var(--button-z-index) + 2);}
+	.BUTTONS .BUTTON:is(:focus-visible)                          {z-index:calc(var(--button-z-index) + 3);}
+
+.BUTTONS._VERTICAL {
+	flex-direction:column;
+}
+	.BUTTONS._VERTICAL > *:first-child {border-bottom-left-radius:0;border-bottom-right-radius:0;}
+	.BUTTONS._VERTICAL > *.BUTTON:last-child  {border-top-left-radius:0;border-top-right-radius:0;}
+
+.BUTTONS_LABEL {
+	--button-text-color:var(--button-group-label-text-color);
+	--button-border-width:0px;
+}
+
+.BUTTONS_LABEL._BORDERED {
+	--button-border-width:1px;
+	--button-border-color:var(--button-group-label-border-color);
+}
+
+.BUTTONS_LABEL._SOLID {
+	--button-background:var(--button-group-label-solid-background);
+	--button-border-width:var(--button-colored-border-width);
+}
+
+.BUTTONS:not(._VERTICAL) .BUTTONS_LABEL {border-top-right-radius:0;border-bottom-right-radius:0;}
+.BUTTONS._VERTICAL .BUTTONS_LABEL {border-bottom-left-radius:0;border-bottom-right-radius:0;}
+
+.BUTTONS:not(._VERTICAL) > *:not(:first-child) {margin-left:calc(var(--button-border-width) * -1);}
+.BUTTONS:not(._VERTICAL) .BUTTONS_LABEL {margin-right:calc(var(--button-border-width) * -1)}
+.BUTTONS:not(._VERTICAL) .BUTTONS_LABEL ~ .BUTTON:nth-child(2) {margin-left:0;}
+
+.BUTTONS._VERTICAL > *:not(:first-child) {margin-top:calc(var(--button-border-width) * -1);}
+.BUTTONS._VERTICAL .BUTTONS_LABEL {margin-bottom:calc(var(--button-border-width) * -1)}
+.BUTTONS._VERTICAL .BUTTONS_LABEL ~ .BUTTON:nth-child(2) {margin-top:0;}
+
+.BUTTONS:not(._VERTICAL) .BUTTONS_LABEL:not(._BORDERED, ._SOLID) ~ .BUTTON:nth-child(2) {border-top-left-radius:var(--button-border-radius);border-bottom-left-radius:var(--button-border-radius);}
+.BUTTONS._VERTICAL       .BUTTONS_LABEL:not(._BORDERED, ._SOLID) ~ .BUTTON:nth-child(2) {border-top-left-radius:var(--button-border-radius);border-top-right-radius:var(--button-border-radius);}
+
+/* STRETCH */
+
+.BUTTON._STRETCH {width:100%;text-align:center;}
+@media (min-width:768px) {.BUTTON._STRETCH_ON_DESKTOP {width:100%;text-align:center;}}
+@media (max-width:767px) {.BUTTON._STRETCH_ON_MOBILE {width:100%;text-align:center;}}
+
+/* Когда нужна кнопка во весь экран, но иконка и надпись должны быть по центру и вместе */
+.BUTTON._STRETCH .BUTTON_INNER {position:relative;}
+.BUTTON._STRETCH .BUTTON_INNER svg {position:absolute;right:100%;}
+
+.BUTTONS .BUTTON._STRETCH {flex:1;}
+@media (min-width:768px) {.BUTTONS .BUTTON._STRETCH_ON_DESKTOP {flex:1;}}
+@media (max-width:767px) {.BUTTONS .BUTTON._STRETCH_ON_MOBILE {flex:1;}}
