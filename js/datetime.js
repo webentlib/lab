@@ -1,4 +1,4 @@
-import { Helper, TimezonesLocale, timezoneStore, get } from '/all.js';
+import { Helper } from '/all.js';
 
 export function Datetime(date_string) {
     if (!date_string) {
@@ -7,7 +7,7 @@ export function Datetime(date_string) {
 
     // let date = new Date(date_string.replace('Z', ''));
 
-    let timezone_date = new Date(date_string).toLocaleString('sv-SE', {timeZone: get(timezoneStore)})
+    let timezone_date = new Date(date_string).toLocaleString('sv-SE', {timeZone: DatetimeHelper.client_timezone})
     let date = new Date(timezone_date)
 
     this.day     = date.getDate().pad(2)
