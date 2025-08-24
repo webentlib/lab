@@ -77,7 +77,7 @@ export { svg } from '/lab/js/svg.js';
 </div>
 ```
 
-#### Select, with icon inside, styled as label — add `__ICON_AS_LABEL`
+#### Select, with icon inside, styled as label — add `_ICON_AS_LABEL`
 ```html
 <div class="SELECT_WITH_ICON _ICON_AS_LABEL">
     <span class="SELECT_ICON">
