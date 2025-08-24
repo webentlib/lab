@@ -31,7 +31,7 @@
 
 .SELECTS {display:inline-flex;}
     .SELECTS .SELECT {margin-right:-1px;min-width:auto;}
-    .SELECTS .SELECT:is(:hover, :active) {z-index:1;}
+    .SELECTS .SELECT:is(:hover, :active) {z-index:2;}
     .SELECTS .SELECT:first-child:not(:last-child) {border-top-right-radius:0;border-bottom-right-radius:0;}
     .SELECTS .SELECT:last-child:not(:first-child) {border-top-left-radius:0;border-bottom-left-radius:0;}
     .SELECTS .SELECT:not(:first-child, :last-child) {border-radius:0;}
@@ -98,54 +98,17 @@
 
 /* Select с иконкой */
 
-.SELECT_WITH_ICON {display:flex;align-items:center;}
+.SELECT_WITH_ICON {display:flex;align-items:center;background:#fff;border-radius:var(--border-radius);}
 .SELECT_WITH_ICON._INLINE {display:inline-flex;}
-    .SELECT_ICON {width:36px;height:36px;display:flex;justify-content:center;align-items:center;}
-    .SELECT_WITH_ICON .SELECT {}
+    .SELECT_ICON {width:36px;height:36px;display:flex;justify-content:center;align-items:center;z-index:0}
+    .SELECT_WITH_ICON .SELECT {background-color:unset;z-index:1;position:relative;}
 
 .SELECT_WITH_ICON._ICON_INSIDE {position:relative;}
-    .SELECT_WITH_ICON._ICON_INSIDE .SELECT_ICON {position:absolute;z-index:1;}
+    .SELECT_WITH_ICON._ICON_INSIDE .SELECT_ICON {position:absolute;}
     .SELECT_WITH_ICON._ICON_INSIDE .SELECT {padding-left:calc(36px);}
 
 .SELECT_WITH_ICON._ICON_AS_LABEL {}
-    .SELECT_WITH_ICON._ICON_AS_LABEL .SELECT_ICON {position:absolute;z-index:1;background:var(--highlight-bleak);border:1px solid var(--control-border-color);border-radius:var(--border-radius) 0 0 var(--border-radius);}
+    .SELECT_WITH_ICON._ICON_AS_LABEL .SELECT_ICON {position:absolute;background:var(--highlight-bleak);border:1px solid var(--control-border-color);border-radius:var(--border-radius) 0 0 var(--border-radius);}
     .SELECT_WITH_ICON._ICON_AS_LABEL:hover .SELECT_ICON:not(:hover) {border-color:var(--control-border-color-hover);}
     .SELECT_WITH_ICON._ICON_AS_LABEL:active .SELECT_ICON:not(:active) {border-color:var(--control-border-color-active);}
     .SELECT_WITH_ICON._ICON_AS_LABEL .SELECT {padding-left:calc(36px + 12px);}
-
-/* Examples */
-
-/*
-
-<select class="SELECT" use:Select>
-    <option>Выберите</option>
-</select>
-
-<div class="SELECT_WITH_ICON">
-    <span class="SELECT_ICON">
-        {@html Icons.timezone({size: 24})}
-    </span>
-    <select class="SELECT _INLINE" use:Select>
-        <option>Выберите</option>
-    </select>
-</div>
-
-<div class="SELECT_WITH_ICON _ICON_INSIDE">
-    <span class="SELECT_ICON">
-        {@html Icons.timezone({size: 24})}
-    </span>
-    <select class="SELECT _INLINE" use:Select>
-        <option>Выберите</option>
-    </select>
-</div>
-
-<div class="SELECT_WITH_ICON _ICON_AS_LABEL">
-    <span class="SELECT_ICON">
-        {@html Icons.timezone({size: 24})}
-    </span>
-    <select class="SELECT _INLINE" use:Select>
-        <option>Выберите</option>
-    </select>
-</div>
-
-*/
