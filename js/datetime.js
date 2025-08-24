@@ -1,13 +1,12 @@
 import { Helper } from '/all.js';
 
-export function Datetime(date_string) {
+export function Datetime(date_string, timezone=DatetimeHelper.client_timezone) {
     if (!date_string) {
         return;
     }
 
     // let date = new Date(date_string.replace('Z', ''));
-
-    let timezone_date = new Date(date_string).toLocaleString('sv-SE', {timeZone: DatetimeHelper.client_timezone})
+    let timezone_date = new Date(date_string).toLocaleString('sv-SE', {timeZone: timezone})
     let date = new Date(timezone_date)
 
     this.day     = date.getDate().pad(2)

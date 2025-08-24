@@ -53,7 +53,7 @@ export { svg } from '/lab/js/svg.js';
 </select>
 ```
 
-#### Select, with icon before select
+#### Select, with icon before
 ```html
 <div class="SELECT_WITH_ICON">
     <span class="SELECT_ICON">
@@ -65,7 +65,7 @@ export { svg } from '/lab/js/svg.js';
 </div>
 ```
 
-#### Select, with icon inside select
+#### Select, with icon inside — add `_ICON_INSIDE`
 ```html
 <div class="SELECT_WITH_ICON _ICON_INSIDE">
     <span class="SELECT_ICON">
@@ -77,7 +77,7 @@ export { svg } from '/lab/js/svg.js';
 </div>
 ```
 
-#### Select, with icon inside select, styled as label
+#### Select, with icon inside, styled as label — add `__ICON_AS_LABEL`
 ```html
 <div class="SELECT_WITH_ICON _ICON_AS_LABEL">
     <span class="SELECT_ICON">
