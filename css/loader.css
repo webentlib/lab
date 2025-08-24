@@ -4,7 +4,7 @@
 .LOADER, .LOADER._48 {
     width:48px;
     height:48px;
-    border:4px solid var(--loader);
+    border:4px solid var(--loader-element);
     border-bottom-color:transparent;
     border-left-color:transparent;
     border-radius:50%;
