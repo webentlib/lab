@@ -44,7 +44,7 @@ export { svg } from '/lab/js/svg.js';
 #### Select, adjusted by option's width
 ```html
 <script>
-    import {Select} from '/all.js';
+    import {Select} from '/all.ts';
     // or
     import {Select} from '/lab/js/select.js';
 </script>
