@@ -2,7 +2,7 @@
     overflow-y:auto;  /* TODO: Проверить на винде */
     position:fixed;top:0;left:0;bottom:0;right:0;z-index:100;
     background:rgba(0,0,0,0.75);
-    padding:calc(var(--header-height)) 0 24px;
+    padding:calc(var(--header-height)) 0 48px;
     display:flex;align-items:flex-start;justify-content:center;
 }
     .MODAL_WINDOW {background:#fff;position:relative;flex:1;max-width:768px;border-radius:var(--border-radius);box-shadow:var(--box-shadow);}
