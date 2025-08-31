@@ -1,0 +1,23 @@
+.MODAL {
+    overflow-y:auto;  /* TODO: Проверить на винде */
+    position:fixed;top:0;left:0;bottom:0;right:0;z-index:100;
+    background:rgba(0,0,0,0.75);
+    padding:calc(var(--header-height)) 0 24px;
+    display:flex;align-items:flex-start;justify-content:center;
+}
+    .MODAL_WINDOW {background:#fff;position:relative;flex:1;max-width:768px;border-radius:var(--border-radius);box-shadow:var(--box-shadow);}
+        .MODAL_HEADER {display:flex;border-bottom:1px solid var(--separator);line-height:30px;font-size:20px;font-weight:var(--semibold);padding:24px calc(60px + 12px) 24px 24px;}
+        .MODAL_CONTAINER {}
+        .MODAL_CONTAINER._CONTENT {padding:24px;}
+        .MODAL_FOOTER {padding:24px;border-top:1px solid var(--separator);display:flex;}
+
+        /* CLOSE */
+
+        /* Outside */
+        .MODAL_CLOSE._OUTSIDE {position:fixed;top:0;right:0;color:hsl(0,0%,80%);}
+        .MODAL:hover .MODAL_CLOSE._OUTSIDE {color:#fff;}
+        .MODAL_WINDOW:hover .MODAL_CLOSE._OUTSIDE {color:hsl(0,0%,80%);}
+        .MODAL_CLOSE._OUTSIDE:hover {color:#fff !important;}
+
+        /* Inside */
+        .MODAL_CLOSE._INSIDE {position:absolute;top:12px;right:12px;color:#000;}
