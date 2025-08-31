@@ -59,7 +59,7 @@
     .CHOICE {display:inline-flex;align-items:center;font-size:16px;line-height:20px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
 
         .CHECKBOX,                       .RADIO {border:0;width:24px;height:24px;position:relative;margin-right:6px;flex-shrink:0;}
-        .CHECKBOX:before,                .RADIO:before {content:'';display:inline-block;border:1px solid var(--control-border-color);background:#fff;height:24px;width:24px;position:absolute;top:0;left:0;}
+        .CHECKBOX:before,                .RADIO:before {content:'';box-sizing:border-box;display:inline-block;border:1px solid var(--control-border-color);background:#fff;height:24px;width:24px;position:absolute;top:0;left:0;}
         @media (hover:hover) {
         .CHECKBOX:hover:before,          .RADIO:hover:before {background:var(--hover)}}
         .CHECKBOX:active:before,         .RADIO:active:before {outline:3px solid var(--control-outline);outline-offset:-2px;}

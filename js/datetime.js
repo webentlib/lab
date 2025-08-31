@@ -1,4 +1,4 @@
-import { Helper } from '/all.js';
+import { Helper } from '/lab/js/helper.js';
 
 export function Datetime(date_string, timezone=DatetimeHelper.client_timezone) {
     if (!date_string) {

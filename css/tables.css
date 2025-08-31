@@ -1,4 +1,8 @@
-.TABLE {box-shadow:0 0 0 1px var(--table-border-color);--table-padding:6px;}
+.TABLE {
+    box-shadow:0 0 0 1px var(--table-border-color);--table-padding:6px;line-height:24px;
+    --table-th-height:36px;
+    --table-subtitle-height:48px;
+}
 .TABLE._STRETCH {width:100%}
 
     /* Строки */
@@ -13,10 +17,30 @@
         .TABLE > thead > tr > th {font-size:var(--font-size-small);font-weight:var(--bold);text-align:center;}
 
     /* Строки в боди */
-    .TABLE > tbody > tr {}
-    .TABLE._ZEBRA > tbody > tr:nth-child(even) {background:var(--body-background-color-half);}
+    .TABLE > tbody > tr,
+    .TABLE > tbody > tr .TABLE_SUBTITLE {background:#fff;}
+    .TABLE._ZEBRA > tbody > tr:nth-child(even),
+    .TABLE._ZEBRA > tbody > tr:nth-child(even) .TABLE_SUBTITLE {background:var(--body-background-color-half);}
+
         /* Ячейки в боди */
-        .TABLE > tbody > tr > :is(th, td) {text-align:left;}
+        .TABLE > tbody > tr > :is(th, td) {}
+        .TABLE > tbody > tr > :is(th) {text-align:left;}
+        .TABLE > tbody > tr > :is(td) {}
 
     /* Sticky */
-    .TABLE_STICKY {position:sticky;top:0;box-shadow: 0 0 0 1px var(--table-border-color);}
+    .TABLE_STICKY {position:sticky;top:var(--header-height);box-shadow: 0 0 0 1px var(--table-border-color);z-index:2;}
+    .TABLE .TABLE .TABLE_STICKY {z-index:2;}
+
+    /* Коллапсим всё, кроме первой колонки */
+    .TABLE._NOWRAP_EXCEPT_FIRST > :is(thead, tbody, tfoot) > tr > :is(th, td):not(:first-child) {width:1px;white-space:nowrap;}
+
+    /* Cell: Numeric & Nowrap */
+    .TABLE_NUMERIC {text-align:right;}
+    .TABLE_FIT {white-space:nowrap;width:1px;}
+    .TABLE_CENTERED {text-align:center;}
+
+    /* Subtable */
+    .TABLE > * > tr > :is(th, td):has(.TABLE) {padding:0;}
+    .TABLE:has(> .TABLE_STICKY) > * > tr > :is(th, td):has(.TABLE) {padding-bottom:var(--table-th-height)}
+    .TABLE_SUBTITLE {font-weight:var(--semibold);position:sticky;top:calc(var(--header-height));padding:12px 24px 12px;z-index:2;}
+    .TABLE .TABLE {margin:0 24px 0;width:calc(100% - 24px * 2);}
