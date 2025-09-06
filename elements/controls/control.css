@@ -4,19 +4,21 @@
 .CHECKBOX, .CHECKBOX:before, .CHECKBOX:after,
 .RADIO, .RADIO:before, .RADIO:after {transition:all var(--control-transition-speed) ease;}
 
-.INPUT, .SELECT, .TEXTAREA, .CONTENTEDITABLE {border:var(--control-border-width) solid var(--control-border-color);border-radius:var(--border-radius);padding-left:6px;padding-right:6px;min-width:100%;}
+.INPUT, .SELECT, .TEXTAREA, .CONTENTEDITABLE {border:var(--control-border-width) solid var(--control-border-color);border-radius:var(--border-radius);padding-left:6px;padding-right:6px;}
+.INPUT, .TEXTAREA, .CONTENTEDITABLE {min-width:100%;}
 
 @media (hover:hover) {.INPUT:hover, .SELECT:hover, .TEXTAREA:hover, .CONTENTEDITABLE:hover, .CHECKBOX input:hover:before, .RADIO input:hover:before {border-color:var(--control-border-color-hover);}}
 .INPUT:focus-visible, .SELECT:focus-visible, .CHECKBOX:focus-visible, .RADIO:focus-visible, .TEXTAREA:focus-visible, .CONTENTEDITABLE:focus-visible {outline-offset:-1px;outline:3px solid var(--control-outline);position:relative;}
 
 /* sizes */
 
-:is(.INPUT, .TEXTAREA, .SELECT, .CHIP)        {--control-height:var(--control-base-height);--control-font-size:var(--control-base-font-size);}
-:is(.INPUT, .TEXTAREA, .SELECT, .CHIP)._TINY  {--control-height:24px;--control-font-size:14px;}
-:is(.INPUT, .TEXTAREA, .SELECT, .CHIP)._SMALL {--control-height:30px;--control-font-size:15px;}
-:is(.INPUT, .TEXTAREA, .SELECT, .CHIP)._BIG   {--control-height:42px;--control-font-size:18px;}
-:is(.INPUT, .TEXTAREA, .SELECT, .CHIP)._LARGE {--control-height:48px;--control-font-size:20px;}
-:is(.INPUT, .TEXTAREA, .SELECT, .CHIP)._HUGE  {--control-height:54px;--control-font-size:22px;}
+:is(.INPUT, .TEXTAREA, .SELECT, .CHIPS)        {--control-height:var(--control-base-height);--control-font-size:var(--control-base-font-size);}
+:is(.INPUT, .TEXTAREA, .SELECT, .CHIPS)._TINY  {--control-height:24px;--control-font-size:14px;}
+:is(.INPUT, .TEXTAREA, .SELECT, .CHIPS)._SMALL {--control-height:30px;--control-font-size:15px;}
+:is(.INPUT, .TEXTAREA, .SELECT, .CHIPS)._BIG   {--control-height:42px;--control-font-size:18px;}
+:is(.INPUT, .TEXTAREA, .SELECT, .CHIPS)._LARGE {--control-height:48px;--control-font-size:20px;}
+:is(.INPUT, .TEXTAREA, .SELECT, .CHIPS)._HUGE  {--control-height:54px;--control-font-size:22px;}
+:is(.INPUT, .TEXTAREA, .SELECT, .CHIPS)._GIANT {--control-height:60px;--control-font-size:24px;}
 
 /* INPUT */
 

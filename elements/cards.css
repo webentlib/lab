@@ -1,0 +1,36 @@
+.CARDS {
+    box-shadow:0 0 0 1px var(--table-border-color);
+}
+.CARDS         {--cards-space:18px;}
+.CARDS._DENSE  {--cards-space:12px;}
+.CARDS._SPARSE {--cards-space:24px;}
+
+.CARDS._STRETCH {width:100%}
+
+    /* Строки */
+    .CARDS > :is(thead, tbody, tfoot) > tr {background:#fff;}
+    .CARDS > :is(thead, tbody, tfoot) > tr:not(:first-child) {border-top:1px solid var(--table-border-color)}
+
+    /* Строки в шапке */
+    .CARDS > thead > tr {border-bottom:1px solid var(--table-border-color);background:rgba(255,255,255,0.5);}
+        .CARDS > thead > tr > td {}
+        .CARDS > thead > tr > td:not(:last-child) {}
+
+        /* Ячейки */
+        .CARDS > :is(thead, tbody, tfoot) > tr > td {padding:var(--cards-space) calc(var(--cards-space) / 2);vertical-align:middle;}
+        .CARDS > :is(thead, tbody, tfoot) > tr > td:first-child {padding-left:var(--cards-space);}
+        .CARDS > :is(thead, tbody, tfoot) > tr > td:last-child {padding-right:var(--cards-space);}
+
+        /* Коллапсим всё, кроме первой колонки */
+        .CARDS._NOWRAP_EXCEPT_FIRST > :is(thead, tbody, tfoot) > tr > td:not(:first-child) {width:1px;white-space:nowrap;}
+
+        .CARDS_SEPARATOR {position:relative;}
+        .CARDS_SEPARATOR:after {content:'';position:absolute;top:var(--cards-space);bottom:var(--cards-space);display:block;width:1px;background:var(--table-border-color);}
+
+        /* Детали */
+        .CARDS > tbody > tr:has(.CARD_DETAILS) {border-top:0;}
+            .CARDS > tbody > tr:has(.CARD_DETAILS) > td {padding-top:0;}
+                .CARDS > tbody > tr:has(.CARD_DETAILS) > td > .CARD_DETAILS {
+                    border-top:1px solid var(--table-border-color);
+                    padding-top:var(--cards-space);
+                }

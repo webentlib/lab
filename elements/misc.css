@@ -1,0 +1,13 @@
+.HR {height:1px;background:var(--separator);}
+
+.NOWRAP {white-space:nowrap;}
+
+.NOSCROLLBAR {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
+    /*box-shadow:0 0 3px rgba(0,0,0,0.2);*/
+}
+
+.NOSCROLLBAR::-webkit-scrollbar {
+    display: none;  /* Older Safari and Chromium */
+}

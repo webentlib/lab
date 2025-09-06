@@ -45,6 +45,7 @@
     overflow:hidden;
     padding-right:0;
     position:relative;
+    width:100%;
 }
 
     .SELECT._STYLED::picker-icon {
@@ -98,17 +99,17 @@
 
 /* SELECT С ИКОНКОЙ */
 
-.SELECT_WITH_ICON {display:flex;align-items:center;background:#fff;border-radius:var(--border-radius);}
+.SELECT_WITH_ICON {display:flex;align-items:center;background:#fff;border-radius:var(--border-radius);position:relative;}
 .SELECT_WITH_ICON._INLINE {display:inline-flex;}
     .SELECT_ICON {width:36px;height:36px;display:flex;justify-content:center;align-items:center;z-index:0}
     .SELECT_WITH_ICON .SELECT {background-color:unset;z-index:1;position:relative;}
 
 .SELECT_WITH_ICON._ICON_INSIDE {position:relative;}
-    .SELECT_WITH_ICON._ICON_INSIDE .SELECT_ICON {position:absolute;}
+    .SELECT_WITH_ICON._ICON_INSIDE .SELECT_ICON {position:absolute;top:0;left:0;}
     .SELECT_WITH_ICON._ICON_INSIDE .SELECT {padding-left:calc(36px);}
 
 .SELECT_WITH_ICON._ICON_AS_LABEL {}
-    .SELECT_WITH_ICON._ICON_AS_LABEL .SELECT_ICON {position:absolute;background:var(--highlight-bleak);border:1px solid var(--control-border-color);border-radius:var(--border-radius) 0 0 var(--border-radius);}
+    .SELECT_WITH_ICON._ICON_AS_LABEL .SELECT_ICON {position:absolute;top:0;left:0;background:var(--highlight-bleak);border:1px solid var(--control-border-color);border-radius:var(--border-radius) 0 0 var(--border-radius);}
     .SELECT_WITH_ICON._ICON_AS_LABEL:hover .SELECT_ICON:not(:hover) {border-color:var(--control-border-color-hover);}
     .SELECT_WITH_ICON._ICON_AS_LABEL:active .SELECT_ICON:not(:active) {border-color:var(--control-border-color-active);}
     .SELECT_WITH_ICON._ICON_AS_LABEL .SELECT {padding-left:calc(36px + 12px);}

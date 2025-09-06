@@ -24,16 +24,16 @@ Now, its not technically convenient, and probably dab from perspective of good d
 	text-align:left;          /* — align text horizontally for multiline content */
 
 	/* COMMON STYLES */
-	transition:background-color var(--button-transition-speed) ease; /* Make background-color change smooth based on global variable; ease — nicest effect */
-	border-radius:var(--button-border-radius);                       /* Global variable used */
+	transition:background-color var(--button-transition-speed) ease, color var(--button-transition-speed) ease;  /* Make colors change smooth based on global variable; ease — nicest effect */
+	border-radius:var(--button-border-radius);  /* Global variable used */
 
 	font-weight:var(--button-font-weight);
 
 	font-size:var(--button-font-size);
-	min-height:var(--button-height); 		                             /* Several things are based on height — so, let's specify it later, in SIZE block */
+	min-height:var(--button-height);  /* Several things are based on height — so, let's specify it later, in SIZE block */
 	min-width:var(--button-height);
 	color:var(--button-text-color);
-	background-color:var(--button-background); /* could not be just "background" — "background-color" used because _LOADING has image */
+	background-color:var(--button-background);  /* could not be just "background" — "background-color" used because _LOADING has image */
 
 	border-width:var(--button-border-width);
 	border-style:var(--button-border-style);
@@ -45,10 +45,10 @@ Now, its not technically convenient, and probably dab from perspective of good d
 	--button-outline-color:var(--button-default-outline-color);
 	outline-color:var(--button-outline-color);
 	
-	--button-padding:calc(var(--button-height) / 2 - var(--button-border-width) - 1px); /* In case of 36 — padding 'll be 16 */
+	--button-padding:calc(var(--button-height) / 2 - var(--button-border-width) - 1px);  /* In case of 36 — padding 'll be 16 */
 	padding:0 var(--button-padding);
 	
-	line-height:calc(var(--button-height) / 2);                     /* Let it be half of height, substract 2 for _BORDERED (it could be 1, but then it woldnot be even) */
+	line-height:calc(var(--button-height) / 2);  /* Let it be half of height, subtract 2 for _BORDERED (it could be 1, but then it woldnot be even) */
 	
 	position:relative;
 	--button-z-index:0;
@@ -88,16 +88,15 @@ Now, its not technically convenient, and probably dab from perspective of good d
 /* DISABLED */
 
 .BUTTON:is(._DISABLED, [disabled]) {opacity:0.8;}
-.BUTTON:is(._DISABLED, [disabled]),
-.BUTTON:is(._DISABLED, [disabled]) * {cursor:default;}
+.BUTTON:is(._DISABLED, [disabled], ._NO_PSEUDO) * {cursor:default;}
 
 /* HOVER / ACTIVE / CURRENT / FOCUS */
 
 @media (hover:hover) {
-.BUTTON:not(._DISABLED, [disabled]):hover           {background-color:var(--button-background-hover);  border-color:var(--button-border-color-hover);  }}
-.BUTTON:not(._DISABLED, [disabled]):active          {background-color:var(--button-background-active); border-color:var(--button-border-color-active); }
-.BUTTON:is(._CURRENT, :has([type="radio"]:checked)) {background-color:var(--button-background-current);border-color:var(--button-border-color-current);}
-.BUTTON:focus-visible                               {--button-outline-width:var(--button-focus-outline-width);}
+.BUTTON:not(._DISABLED, ._NO_PSEUDO, [disabled]):hover  {background-color:var(--button-background-hover);  border-color:var(--button-border-color-hover);  }}
+.BUTTON:not(._DISABLED, ._NO_PSEUDO, [disabled]):active {background-color:var(--button-background-active); border-color:var(--button-border-color-active); }
+.BUTTON:is(._CURRENT, :has([type="radio"]:checked))     {background-color:var(--button-background-current);border-color:var(--button-border-color-current);}
+.BUTTON:focus-visible                                   {--button-outline-width:var(--button-focus-outline-width);}
 
 /* LINK */
 
@@ -155,6 +154,7 @@ Now, its not technically convenient, and probably dab from perspective of good d
 :is(.BUTTON, .BUTTONS_LABEL)._BIG   {--button-height:calc(var(--button-default-height) + 6px); --button-font-size:calc(var(--button-default-font-size) + 2px);}
 :is(.BUTTON, .BUTTONS_LABEL)._LARGE {--button-height:calc(var(--button-default-height) + 12px);--button-font-size:calc(var(--button-default-font-size) + 4px);}
 :is(.BUTTON, .BUTTONS_LABEL)._HUGE  {--button-height:calc(var(--button-default-height) + 18px);--button-font-size:calc(var(--button-default-font-size) + 6px);}
+:is(.BUTTON, .BUTTONS_LABEL)._GIANT {--button-height:calc(var(--button-default-height) + 24px);--button-font-size:calc(var(--button-default-font-size) + 8px);}
 
 /* LOADING */
 

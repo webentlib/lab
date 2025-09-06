@@ -10,9 +10,7 @@
     .FIELDS .FIELD {margin-bottom:0;}
     .FIELDS .FIELD:not(:last-child) {padding-right:12px;}
 
-        .LABEL {font-size:15px;line-height:24px;min-height:24px;font-weight:var(--bold);display:block;}
-        span.LABEL {display:inline-block;}
-        div.LABEL, label.LABEL {margin:0 0 4px;}
+        .LABEL {font-size:15px;line-height:20px;min-height:20px;font-weight:var(--bold);display:block;margin:0 0 6px;}
 
         .FIELD._OPTIONAL .LABEL {color:var(--optional)}
         .FIELD:has(input:focus) .LABEL {}

@@ -9,8 +9,9 @@ img {line-height:0;}
 
 html { /* https://stackoverflow.com/a/1202542/4117781 */
     overflow: -moz-scrollbars-vertical;
-    overflow-y: scroll;
 }
+
+html, body {overflow-x:auto;height:100%;}
 
 a, button {
     -webkit-tap-highlight-color:transparent; /* https://stackoverflow.com/a/3516243/4117781 */

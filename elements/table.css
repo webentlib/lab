@@ -8,6 +8,7 @@
     /* Строки */
     .TABLE > :is(thead, tbody, tfoot) > tr {background:#fff;}
     .TABLE > :is(thead, tbody, tfoot) > tr:not(:first-child) {border-top:1px solid var(--table-border-color)}
+
         /* Ячейки */
         .TABLE > * > tr > :is(th, td) {padding:var(--table-padding);vertical-align:middle;}
 
@@ -19,6 +20,8 @@
     /* Строки в боди */
     .TABLE > tbody > tr,
     .TABLE > tbody > tr .TABLE_SUBTITLE {background:#fff;}
+
+    /* Зебра */
     .TABLE._ZEBRA > tbody > tr:nth-child(even),
     .TABLE._ZEBRA > tbody > tr:nth-child(even) .TABLE_SUBTITLE {background:var(--body-background-color-half);}
 
@@ -30,6 +33,14 @@
     /* Sticky */
     .TABLE_STICKY {position:sticky;top:var(--header-height);box-shadow: 0 0 0 1px var(--table-border-color);z-index:2;}
     .TABLE .TABLE .TABLE_STICKY {z-index:2;}
+
+    /* _BORDERLESS */
+    .TABLE._BORDERLESS {box-shadow:none;}
+        .TABLE._BORDERLESS > .TABLE_STICKY {box-shadow:none;}
+            .TABLE._BORDERLESS > :is(thead) > tr {background:var(--body-background-color-x4);}
+            .TABLE._BORDERLESS > :is(thead, tbody, tfoot) > tr {border-top:0;border-bottom:0}
+                .TABLE._BORDERLESS._ZEBRA > tbody > tr:nth-child(even),
+                .TABLE._BORDERLESS._ZEBRA > tbody > tr:nth-child(even) > * > .TABLE_SUBTITLE {background:var(--body-background-color-x2);}
 
     /* Коллапсим всё, кроме первой колонки */
     .TABLE._NOWRAP_EXCEPT_FIRST > :is(thead, tbody, tfoot) > tr > :is(th, td):not(:first-child) {width:1px;white-space:nowrap;}

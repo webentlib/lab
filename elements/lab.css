@@ -38,8 +38,8 @@
     --placeholder:          hsl(0, 0%, 70%); /* Всем инпутам, текстареям, контентедитаблам и т.д. */
     --loader-element:       hsl(0, 0%, 60%); /* Лоадер. Не забыть также поменять и в buttons.css .BUTTON._LOADING */
     --loader-text:          hsl(0, 0%, 50%);
-    --table-border-color:   hsl(0, 0%, 88%);
-    --separator:            hsl(0, 0%, 90%); /* Для <hr>; бордера в ленте материалов */
+    --table-border-color:   hsl(0, 0%, 85%);
+    --separator:            hsl(0, 0%, 85%); /* Для <hr>; бордера в ленте материалов */
     --tabs-underline-color: hsl(0, 0%, 80%);
     --popup-outside:        rgba(0,0,0,0.8); /* Цвет фона всех попапов */
 

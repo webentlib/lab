@@ -1,0 +1,38 @@
+.DIVISION {
+    padding:var(--division-space);
+    border-radius:var(--border-radius);
+    background:#fff;
+    box-shadow:0 0 0 1px var(--table-border-color);
+}
+.DIVISION         {--division-space:18px;}
+.DIVISION._DENSE  {--division-space:12px;}
+.DIVISION._SPARSE {--division-space:24px;}
+
+.DIVISION:has(.DIVISION_HEADER, .DIVISION_BODY) {
+    background:none;
+    box-shadow:unset;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+}
+
+.DIVISION_HEADER {
+    border-bottom:var(--control-border-width) solid var(--separator);
+    background:#fff;
+    box-shadow:0 0 0 1px var(--table-border-color);
+    border-radius:var(--border-radius);
+    /*min-height:calc(var(--division-space) * 2 + 24px);*/
+    display:flex;
+    align-items:center;
+    box-sizing:content-box;
+    padding:var(--division-space);
+}
+    .DIVISION_TITLE {font-weight:var(--bold);font-size:17px;display:flex;align-items:center;}
+    .DIVISION_CONTROLS {margin-left:auto;}
+
+.DIVISION_BODY {
+    background:#fff;
+    box-shadow:0 0 0 1px var(--table-border-color);
+    padding:var(--division-space);
+    flex:1;
+}

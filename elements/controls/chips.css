@@ -3,6 +3,8 @@
     background:var(--control-border-color);
     border-radius:var(--border-radius);
     min-height:var(--control-height);
+    --chip-padding:calc(var(--control-height) / 2 - var(--chip-border-width) - 1px);  /* In case of 36 — padding 'll be 16 */
+    --chip-border-width:1px
 }
 .CHIPS._STRETCH {display:flex;}
 
@@ -18,16 +20,16 @@
         border-radius:var(--border-radius);
         min-height:var(--control-height);
         font-size:calc(var(--control-font-size));
-        border:var(--control-border-width) solid var(--control-border-color);
+        border:var(--chip-border-width) solid var(--control-border-color);
         display:inline-flex;
         align-items:center;
         justify-content:center;
         font-weight:var(--button-font-weight);
         cursor:pointer;
-        padding:0 18px;
+        padding:0 var(--chip-padding);
         position:relative;
     }
-    .CHIP:not(:first-child) {margin-left:-1px;}
+    .CHIP:not(:first-child) {margin-left:calc(var(--chip-border-width) * -1);}
     .CHIPS._STRETCH .CHIP {flex-grow:1;padding:0}
 
     .CHIP:hover {
