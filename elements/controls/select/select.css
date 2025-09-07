@@ -117,3 +117,8 @@
 .SELECT_WITH_ICON:has(.SELECT._ROUNDED) {
     border-radius:50vh;
 }
+
+
+@supports(appearance:base-select) {@media (hover:hover) {
+    .SELECT_WITH_ICON .SELECT._STYLED option {padding-left:calc(24px + var(--control-border-width) * 2);}
+}}

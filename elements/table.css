@@ -5,15 +5,20 @@
 }
 .TABLE._STRETCH {width:100%}
 
+    /* Шапка */
+
+    .TABLE > thead {border-bottom:1px solid var(--table-border-color);background:var(--table-thead-bg);}
+    .TABLE > :is(tbody, tfoot) {background:#fff;}
+
     /* Строки */
-    .TABLE > :is(thead, tbody, tfoot) > tr {background:#fff;}
+    .TABLE > :is(thead, tbody, tfoot) > tr {}
     .TABLE > :is(thead, tbody, tfoot) > tr:not(:first-child) {border-top:1px solid var(--table-border-color)}
 
         /* Ячейки */
         .TABLE > * > tr > :is(th, td) {padding:var(--table-padding);vertical-align:middle;}
 
     /* Строки в шапке */
-    .TABLE > thead > tr {border-bottom:1px solid var(--table-border-color);background:var(--body-background-color-x2);}
+    .TABLE > thead > tr {}
         /* Ячейки в шапке */
         .TABLE > thead > tr > th {font-size:var(--font-size-small);font-weight:var(--bold);text-align:center;}
 
@@ -23,7 +28,7 @@
 
     /* Зебра */
     .TABLE._ZEBRA > tbody > tr:nth-child(even),
-    .TABLE._ZEBRA > tbody > tr:nth-child(even) .TABLE_SUBTITLE {background:var(--body-background-color-half);}
+    .TABLE._ZEBRA > tbody > tr:nth-child(even) .TABLE_SUBTITLE {background:var(--table-even-bg);}
 
         /* Ячейки в боди */
         .TABLE > tbody > tr > :is(th, td) {}
@@ -31,16 +36,16 @@
         .TABLE > tbody > tr > :is(td) {}
 
     /* Sticky */
-    .TABLE_STICKY {position:sticky;top:var(--header-height);box-shadow: 0 0 0 1px var(--table-border-color);z-index:2;}
+    .TABLE_STICKY {position:sticky;top:var(--header-height);border-bottom:0 !important;box-shadow: 0 0 0 1px var(--table-border-color);z-index:2;}
     .TABLE .TABLE .TABLE_STICKY {z-index:2;}
 
     /* _BORDERLESS */
     .TABLE._BORDERLESS {box-shadow:none;}
         .TABLE._BORDERLESS > .TABLE_STICKY {box-shadow:none;}
-            .TABLE._BORDERLESS > :is(thead) > tr {background:var(--body-background-color-x4);}
+            .TABLE._BORDERLESS > :is(thead) > tr {background:var(--table-borderless-thead-bg);}
             .TABLE._BORDERLESS > :is(thead, tbody, tfoot) > tr {border-top:0;border-bottom:0}
                 .TABLE._BORDERLESS._ZEBRA > tbody > tr:nth-child(even),
-                .TABLE._BORDERLESS._ZEBRA > tbody > tr:nth-child(even) > * > .TABLE_SUBTITLE {background:var(--body-background-color-x2);}
+                .TABLE._BORDERLESS._ZEBRA > tbody > tr:nth-child(even) > * > .TABLE_SUBTITLE {background:var(--table-borderless-even-bg);}
 
     /* Коллапсим всё, кроме первой колонки */
     .TABLE._NOWRAP_EXCEPT_FIRST > :is(thead, tbody, tfoot) > tr > :is(th, td):not(:first-child) {width:1px;white-space:nowrap;}

@@ -9,17 +9,17 @@ export function Datetime(date_string, timezone=DatetimeHelper.client_timezone) {
     let timezone_date = new Date(date_string).toLocaleString('sv-SE', {timeZone: timezone})
     let date = new Date(timezone_date)
 
-    this.day     = date.getDate().pad(2)
-    this.month   = (date.getMonth() + 1).pad(2)
+    this.day     = date.getDate().PAD(2)
+    this.month   = (date.getMonth() + 1).PAD(2)
     this.year    = date.getFullYear()
     this.weekday = date.getDay()
-    this.hours   = date.getHours().pad(2)
-    this.minutes = date.getMinutes().pad(2)
+    this.hours   = date.getHours().PAD(2)
+    this.minutes = date.getMinutes().PAD(2)
     this.seconds = date.getSeconds()
 
-    this.date = `${this.day.pad(2)}.${this.month.pad(2)}.${this.year}`;
-    this.time = `${this.hours.pad(2)}:${this.minutes.pad(2)}`;
-    this.fulltime = `${this.hours.pad(2)}:${this.minutes.pad(2)}:${this.seconds.pad(2)}`;
+    this.date = `${this.day.PAD(2)}.${this.month.PAD(2)}.${this.year}`;
+    this.time = `${this.hours.PAD(2)}:${this.minutes.PAD(2)}`;
+    this.fulltime = `${this.hours.PAD(2)}:${this.minutes.PAD(2)}:${this.seconds.PAD(2)}`;
     this.datetime = `${this.date} ${this.time}`;
     this.datefulltime = `${this.date} ${this.fulltime}`;
 

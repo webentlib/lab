@@ -3,6 +3,17 @@
 
     --header-height:0;
 
+    /* BG COLORS */
+
+    --body-bg:hsl(0, 0%, 97%);
+    --form-bg:hsl(0, 0%, 98.5%);
+
+    --table-thead-bg:hsl(0, 0%, 95.5%);
+    --table-even-bg:hsl(0, 0%, 98.5%);
+
+    --table-borderless-thead-bg:hsl(0, 0%, 93.0%);
+    --table-borderless-even-bg:hsl(0, 0%, 95.5%);
+
     /* COMMON */
 
     --border-radius:2px;
@@ -58,6 +69,10 @@
     --hover-alpha:  rgba(0,0,0,0.02);
     --active-alpha: rgba(0,0,0,0.06);
     --current-alpha:rgba(0,0,0,0.04);
+
+    /* TABS */
+
+    --tab-hover:hsl(0, 0%, 98.5%);
 
     /* HIGHLIGHT */
 

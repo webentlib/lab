@@ -1,7 +1,7 @@
 .TABS {display:flex;background:#fff;align-items:center;}
     .TAB {position:relative;padding:0 24px;height:60px;display:flex;align-items:center;text-decoration:none;font-weight:var(--semibold);color:var(--secondary);transition:all var(--transition-speed) ease;}
         .TAB:before {content:'';position:absolute;bottom:0;left:0;right:0;height:0px;transition:all var(--transition-speed) ease;}
-    .TAB:hover {background:var(--body-background-color-half);color:#000;}
+    .TAB:hover {background:var(--tab-hover);color:#000;}
         .TAB:hover:before {background:var(--tabs-underline-color);height:4px;}
     .TAB:active {background:var(--active);}
     .TAB._CURRENT {position:relative;color:#000;}
