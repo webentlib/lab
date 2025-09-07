@@ -11,7 +11,9 @@ html { /* https://stackoverflow.com/a/1202542/4117781 */
     overflow: -moz-scrollbars-vertical;
 }
 
-html, body {overflow-x:auto;height:100%;}
+html, body {overflow-x:auto;}
+
+body {height:100%;}
 
 a, button {
     -webkit-tap-highlight-color:transparent; /* https://stackoverflow.com/a/3516243/4117781 */

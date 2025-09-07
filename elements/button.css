@@ -171,16 +171,16 @@ Now, its not technically convenient, and probably dab from perspective of good d
 
 /* ICONS */
 
-.BUTTON._LEFT_ICON  {padding-left:0;}
-.BUTTON._RIGHT_ICON  {padding-right:0;}
+.BUTTON._ICON_LEFT  {padding-left:0;}
+.BUTTON._ICON_RIGHT  {padding-right:0;}
 
 .BUTTON:is(._TOP_ICON, ._BOTTOM_ICON) {height:auto;flex-direction:column;}
 
 .BUTTON._TOP_ICON    {padding-bottom:calc(var(--button-height) / 4 - var(--button-border-width));}
 .BUTTON._BOTTOM_ICON {padding-top:calc(var(--button-height) / 4 - var(--button-border-width));}
 
-.BUTTON._LEFT_ICON   *:is(svg, .ICON) {margin-left:calc(var(--button-height) / 4 - var(--button-border-width));margin-right:calc(var(--button-height) / 6 - var(--button-border-width));}
-.BUTTON._RIGHT_ICON  *:is(svg, .ICON) {margin-left:calc(var(--button-height) / 6 - var(--button-border-width));margin-right:calc(var(--button-height) / 4 - var(--button-border-width));}
+.BUTTON._ICON_LEFT   *:is(svg, .ICON) {margin-left:calc(var(--button-height) / 4 - var(--button-border-width));margin-right:calc(var(--button-height) / 6 - var(--button-border-width));}
+.BUTTON._ICON_RIGHT  *:is(svg, .ICON) {margin-left:calc(var(--button-height) / 6 - var(--button-border-width));margin-right:calc(var(--button-height) / 4 - var(--button-border-width));}
 .BUTTON._TOP_ICON    *:is(svg, .ICON) {margin-top: calc(var(--button-height) / 4 - var(--button-border-width));margin-bottom:calc(var(--button-height) / 6 - var(--button-border-width));}
 .BUTTON._BOTTOM_ICON *:is(svg, .ICON) {margin-top: calc(var(--button-height) / 6 - var(--button-border-width));margin-bottom:calc(var(--button-height) / 4 - var(--button-border-width));}
 
@@ -191,10 +191,10 @@ Now, its not technically convenient, and probably dab from perspective of good d
 }
 
 @media (max-width:767px) {
-	.BUTTON._NO_ICON_ON_MOBILE._LEFT_ICON {padding-left:var(--button-padding);}
-	.BUTTON._NO_ICON_ON_MOBILE._RIGHT_ICON {padding-right:var(--button-padding);}
+	.BUTTON._NO_ICON_ON_MOBILE._ICON_LEFT {padding-left:var(--button-padding);}
+	.BUTTON._NO_ICON_ON_MOBILE._ICON_RIGHT {padding-right:var(--button-padding);}
 	.BUTTON._NO_ICON_ON_MOBILE._TOP_ICON {padding-bottom:0;}
-	.BUTTON._NO_ICON_ON_MOBILE._RIGHT_ICON {padding-top:0;}
+	.BUTTON._NO_ICON_ON_MOBILE._ICON_RIGHT {padding-top:0;}
 
 	.BUTTON._NO_ICON_ON_MOBILE *:is(svg, .BUTTON_ICON) {display:none}
 }

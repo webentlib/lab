@@ -4,28 +4,12 @@
 2. Add this to your base layout (commonly `base.svelte`) to the very top of your `<script>` tag:
 ```js
 // LAB
-import '/lab/css/lab.css';
-import '/lab/css/reset.css';
-import '/lab/css/buttons.css';
-import '/lab/css/tables.css';
-import '/lab/css/cards.css';
-import '/lab/css/highlight.css';
-import '/lab/css/loader.css';
-import '/lab/css/misc.css';
-import '/lab/css/controls/forms.css';
-import '/lab/css/controls/controls.css';
-import '/lab/css/controls/selects.css';
-import '/lab/css/controls/chips.css';
+import '/lab/index.css';
 ```
-3. Add this to your `all.js`:
+3. Add this to your `all.ts`:
 ```js
 // LAB
-import '/lab/js/extend.js';
-export { Helper } from '/lab/js/helper.js';
-export { Select } from '/lab/js/select.js';
-export { Datetime, DatetimeHelper } from '/lab/js/datetime.js';
-export { BaseModel } from '/lab/js/models.js';
-export { svg } from '/lab/js/svg.js';
+export { Helper, Select, Datetime, DatetimeHelper, BaseModel, svg, getCookie } from '/lab/';
 ```
 
 # Usage
@@ -46,7 +30,7 @@ export { svg } from '/lab/js/svg.js';
 <script>
     import {Select} from '/all.ts';
     // or
-    import {Select} from '/lab/js/select.js';
+    import {Select} from '/lab/';
 </script>
 <select class="SELECT" use:Select>
     <option>Option</option>
