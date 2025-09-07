@@ -1,4 +1,4 @@
-.FORM {max-width:calc(360px + 24px);margin:24px auto;}
+.FORM {/*max-width:calc(360px + 24px);*/margin:24px auto;}
     .FAULTS {margin-bottom:12px;}
         .FAULT {color:var(--primary);font-size:14px;font-weight:var(--bold)}
         .FAULT:not(:last-child) {margin-bottom:6px;}
