@@ -120,5 +120,6 @@
 
 
 @supports(appearance:base-select) {@media (hover:hover) {
-    .SELECT_WITH_ICON .SELECT._STYLED option {padding-left:calc(24px + var(--control-border-width) * 2);}
+    .SELECT_WITH_ICON._ICON_INSIDE   .SELECT._STYLED option {padding-left:calc(12px + var(--control-border-width) * 2);}
+    .SELECT_WITH_ICON._ICON_AS_LABEL .SELECT._STYLED option {padding-left:calc(24px + var(--control-border-width) * 2);}
 }}
