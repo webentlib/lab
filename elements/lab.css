@@ -197,4 +197,4 @@ a:not([href]) {
 
 html {display:contents;}
 body {min-width:fit-content;overflow-y:scroll;}
-body._SCROLL_DISABLED {overflow:hidden;/*padding-right:var(--scrollbar-width);*/}
+body._SCROLL_DISABLED {overflow:hidden;padding-right:var(--scrollbar-width);}
