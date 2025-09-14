@@ -1,3 +1,10 @@
+.SELECTS {display:inline-flex;}
+    .SELECTS .SELECT {margin-right:-1px;min-width:auto;}
+    .SELECTS .SELECT:is(:hover, :active) {z-index:2;}
+    .SELECTS .SELECT:first-child:not(:last-child) {border-top-right-radius:0;border-bottom-right-radius:0;}
+    .SELECTS .SELECT:last-child:not(:first-child) {border-top-left-radius:0;border-bottom-left-radius:0;}
+    .SELECTS .SELECT:not(:first-child, :last-child) {border-radius:0;}
+
 .SELECT {
     height:var(--control-height);
     font-size:var(--control-font-size);
@@ -25,16 +32,13 @@
 .SELECT._SHORT_OPTIONS {
     --option-height:calc(var(--control-height) / 4 * 3);
 }
+.SELECT._STYLED {
+    width:100%;
+}
 
 /* Если выбрано дефолтное значение без value — делаем текст сереньким */
 .SELECT:has(option[value=""]:checked) {color:var(--select-placeholder);}
 
-.SELECTS {display:inline-flex;}
-    .SELECTS .SELECT {margin-right:-1px;min-width:auto;}
-    .SELECTS .SELECT:is(:hover, :active) {z-index:2;}
-    .SELECTS .SELECT:first-child:not(:last-child) {border-top-right-radius:0;border-bottom-right-radius:0;}
-    .SELECTS .SELECT:last-child:not(:first-child) {border-top-left-radius:0;border-bottom-left-radius:0;}
-    .SELECTS .SELECT:not(:first-child, :last-child) {border-radius:0;}
 
 /* Пусть на мобильных девайсах выпадающий список останется нативным */
 @supports(appearance:base-select) {@media (hover:hover) {
@@ -43,9 +47,7 @@
     appearance:base-select;
     background-image:none;
     overflow:hidden;
-    padding-right:0;
     position:relative;
-    width:100%;
 }
 
     .SELECT._STYLED::picker-icon {
