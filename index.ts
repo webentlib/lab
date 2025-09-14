@@ -1,5 +1,6 @@
 import './scripts/extend.ts';
 import './scripts/scroll.ts';
+import './scripts/scrollbar.ts';
 
 export { getCookie } from './scripts/cookie.ts';
 export { Helper } from './scripts/helper.ts';

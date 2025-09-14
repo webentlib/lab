@@ -1,5 +1,4 @@
 @import './elements/lab.css';
-@import './elements/reset.css';
 @import './elements/button.css';
 @import './elements/table.css';
 @import './elements/cards.css';
@@ -10,6 +9,7 @@
 @import './elements/summary.css';
 @import './elements/dropdown.css';
 @import './elements/modal.css';
+@import './elements/legend.css';
 @import './elements/controls/form.css';
 @import './elements/controls/control.css';
 @import './elements/controls/select/select.css';
