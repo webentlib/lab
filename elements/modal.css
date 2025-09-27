@@ -7,7 +7,7 @@
     user-select:none;
     color-scheme:dark;
 }
-    .MODAL_WINDOW {user-select:text;background:#fff;position:relative;flex:1;max-width:768px;border-radius:var(--border-radius);box-shadow:var(--box-shadow);}
+    .MODAL_WINDOW {user-select:text;background:#fff;position:relative;flex:1;max-width:768px;border-radius:var(--border-radius);box-shadow:var(--box-shadow);color-scheme:normal;}
         .MODAL_HEADER {display:flex;border-bottom:1px solid var(--separator);line-height:30px;font-size:20px;font-weight:var(--semibold);padding:24px calc(60px + 12px) 24px 24px;}
         .MODAL_CONTAINER {}
         .MODAL_CONTAINER._CONTENT {padding:24px;}
