@@ -1,4 +1,4 @@
-import { Helper } from '../scripts/helper.js';
+import { Lab } from '../scripts/lab.js';
 
 export function Datetime(date_string, timezone=DatetimeHelper.client_timezone) {
     if (!date_string) {
@@ -34,8 +34,8 @@ export const DatetimeHelper = new function() {
     this.client_year = new Date().getFullYear();
     this.client_timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-    this.days = Helper.range(1, 31 + 1);
-    this.days_february = Helper.range(1, 28 + 1);
+    this.days = Lab.range(1, 31 + 1);
+    this.days_february = Lab.range(1, 28 + 1);
     this.months = {
         1: 'Январь',
         2: 'Февраль',
@@ -59,9 +59,9 @@ export const DatetimeHelper = new function() {
         6: 'СБ',
         7: 'ВС',
     }
-    this.years = Helper.range(this.current_year, this.current_year + 2);
-    this.hours = Helper.range(0, 23 + 1);
-    this.minutes = Helper.range(0, 59 + 1);
+    this.years = Lab.range(this.current_year, this.current_year + 2);
+    this.hours = Lab.range(0, 23 + 1);
+    this.minutes = Lab.range(0, 59 + 1);
 
     this.moscow_timezone = 'Europe/Moscow';
 

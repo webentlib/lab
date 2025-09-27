@@ -36,12 +36,12 @@
         .TABLE > tbody > tr > :is(td) {}
 
     /* Sticky */
-    .TABLE_STICKY {position:sticky;top:var(--header-height);border-bottom:0 !important;box-shadow: 0 0 0 1px var(--table-border-color);z-index:2;}
-    .TABLE .TABLE .TABLE_STICKY {z-index:2;}
+    .TABLE_STICKY, .TABLE._STICKY > thead {position:sticky;top:var(--header-height);border-bottom:0 !important;box-shadow: 0 0 0 1px var(--table-border-color);z-index:2;}
+    .TABLE .TABLE .TABLE_STICKY, .TABLE .TABLE._STICKY > thead {z-index:2;}
 
     /* _BORDERLESS */
     .TABLE._BORDERLESS {box-shadow:none;}
-        .TABLE._BORDERLESS > .TABLE_STICKY {box-shadow:none;}
+        .TABLE._BORDERLESS > .TABLE_STICKY, .TABLE._BORDERLESS._STICKY > thead {box-shadow:none;}
             .TABLE._BORDERLESS > :is(thead) > tr {background:var(--table-borderless-thead-bg);}
             .TABLE._BORDERLESS > :is(thead, tbody, tfoot) > tr {border-top:0;border-bottom:0}
                 .TABLE._BORDERLESS._ZEBRA > tbody > tr:nth-child(even),
@@ -57,6 +57,7 @@
 
     /* Subtable */
     .TABLE > * > tr > :is(th, td):has(.TABLE) {padding:0;}
-    .TABLE:has(> .TABLE_STICKY) > * > tr > :is(th, td):has(.TABLE) {padding-bottom:var(--table-th-height)}
+    .TABLE:has(> .TABLE_STICKY) > * > tr > :is(th, td):has(.TABLE),
+    .TABLE._STICKY:has(> thead) > * > tr > :is(th, td):has(.TABLE) {padding-bottom:var(--table-th-height)}
     .TABLE_SUBTITLE {font-weight:var(--semibold);position:sticky;top:calc(var(--header-height));padding:12px 24px 12px;z-index:2;}
     .TABLE .TABLE {margin:0 24px 0;width:calc(100% - 24px * 2);}

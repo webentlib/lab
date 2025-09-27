@@ -9,7 +9,7 @@ import '/lab/index.css';
 3. Add this to your `all.ts`:
 ```js
 // LAB
-export { Helper, Select, Datetime, DatetimeHelper, BaseModel, svg, getCookie } from '/lab/';
+export { Lab, Select, Datetime, DatetimeHelper, BaseModel, svg, getCookie } from '/lab/';
 ```
 
 # Usage
