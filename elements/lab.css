@@ -46,14 +46,14 @@
     --error:  var(--orange);
     --success:hsl(140, 75%, 35%);
 
-    --select-placeholder:   hsl(0, 0%, 40%); /* Для дефолтного значения селекта и т.д. */
-    --placeholder:          hsl(0, 0%, 70%); /* Всем инпутам, текстареям, контентедитаблам и т.д. */
-    --loader-element:       hsl(0, 0%, 60%); /* Лоадер. Не забыть также поменять и в buttons.css .BUTTON._LOADING */
-    --loader-text:          hsl(0, 0%, 50%);
-    --table-border-color:   hsl(0, 0%, 85%);
-    --separator:            hsl(0, 0%, 85%); /* Для <hr>; бордера в ленте материалов */
-    --tabs-underline-color: hsl(0, 0%, 80%);
-    --popup-outside:        rgba(0,0,0,0.8); /* Цвет фона всех попапов */
+    --select-placeholder:       hsl(0, 0%, 40%); /* Для дефолтного значения селекта и т.д. */
+    --placeholder:              hsl(0, 0%, 70%); /* Всем инпутам, текстареям, контентедитаблам и т.д. */
+    --loader-element:           hsl(0, 0%, 60%); /* Лоадер. Не забыть также поменять и в buttons.css .BUTTON._LOADING */
+    --loader-text:              hsl(0, 0%, 50%);
+    --table-border-color:       hsl(0, 0%, 85%);
+    --separator:                hsl(0, 0%, 85%); /* Для <hr>; бордера в ленте материалов */
+    --tab-underline-color:      hsl(0, 0%, 80%);
+    --popup-outside:            rgba(0,0,0,0.8); /* Цвет фона всех попапов */
 
     --secondary:            hsl(0, 0%, 40%); /* Для дат внутри материалов */
     --optional:             hsl(0, 0%, 40%); /* Для дат внутри материалов */
@@ -67,13 +67,16 @@
     --opened:  hsl(0, 0%, 88%);
     --active:  hsl(0, 0%, 84%);
 
-    --hover-alpha:  rgba(0,0,0,0.02);
-    --active-alpha: rgba(0,0,0,0.06);
-    --current-alpha:rgba(0,0,0,0.04);
+    --hover-alpha:  hsla(0, 0%, 0%, 0.02);
+    --active-alpha: hsla(0, 0%, 0%, 0.06);
+    --current-alpha:hsla(0, 0%, 0%, 0.04);
 
     /* TABS */
 
-    --tab-hover:hsl(0, 0%, 98.5%);
+    --tab-hover:hsl(0, 0%, 96%);
+    --tab-active:hsl(0, 0%, 92%);
+    --tab-hover-alpha:hsla(0, 0%, 0%, 0.04);
+    --tab-active-alpha:hsla(0, 0%, 0%, 0.08);
 
     /* HIGHLIGHT */
 
