@@ -1,4 +1,4 @@
-# Installation
+# Installation!
 
 1. Pull this repo to the root folder (same lvl as `package.json`) to get `lab/` folder.
 2. Add this to your base layout (commonly `base.svelte`) to the very top of your `<script>` tag:
