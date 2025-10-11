@@ -24,8 +24,8 @@
         /* Коллапсим всё, кроме первой колонки */
         .CARDS._NOWRAP_EXCEPT_FIRST > :is(thead, tbody, tfoot) > tr > td:not(:first-child) {width:1px;white-space:nowrap;}
 
-        .CARDS_SEPARATOR {position:relative;}
-        .CARDS_SEPARATOR:after {content:'';position:absolute;top:var(--cards-space);bottom:var(--cards-space);display:block;width:1px;background:var(--table-border-color);}
+        .CC._SEPARATOR {position:relative;}
+        .CC._SEPARATOR:after {content:'';position:absolute;top:var(--cards-space);bottom:var(--cards-space);display:block;width:1px;background:var(--table-border-color);}
 
         /* Детали */
         .CARDS > tbody > tr:has(.CARD_DETAILS) {border-top:0;}
@@ -34,3 +34,11 @@
                     border-top:1px solid var(--table-border-color);
                     padding-top:var(--cards-space);
                 }
+
+    /* Cell: Numeric & Nowrap */
+    .CC._NUMERIC {text-align:right;}
+    .CC._FIT {white-space:nowrap;width:1px;}
+    .CC._CENTER {text-align:center;}
+    .CC._LEFT   {text-align:center;}
+    .CC._RIGHT  {text-align:center;}
+    .CC._PADDINGLESS {padding:0;}

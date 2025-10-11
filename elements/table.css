@@ -1,7 +1,6 @@
 .TABLE {
-    box-shadow:0 0 0 1px var(--table-border-color);--table-padding:6px;line-height:24px;
+    box-shadow:0 0 0 1px var(--table-border-color);--table-padding-x:12px;--table-padding-y:6px;line-height:24px;
     --table-th-height:36px;
-    --table-subtitle-height:48px;
 }
 .TABLE._STRETCH {width:100%}
 
@@ -15,49 +14,37 @@
     .TABLE > :is(thead, tbody, tfoot) > tr:not(:first-child) {border-top:1px solid var(--table-border-color)}
 
         /* Ячейки */
-        .TABLE > * > tr > :is(th, td) {padding:var(--table-padding);vertical-align:middle;}
+        .TABLE > * > tr > :is(th, td) {padding:var(--table-padding-y) var(--table-padding-x) var(--table-padding-y) var(--table-padding-x);vertical-align:middle;}
 
     /* Строки в шапке */
     .TABLE > thead > tr {}
         /* Ячейки в шапке */
         .TABLE > thead > tr > th {font-size:var(--font-size-small);font-weight:var(--bold);text-align:center;}
 
-    /* Строки в боди */
-    .TABLE > tbody > tr,
-    .TABLE > tbody > tr .TABLE_SUBTITLE {background:#fff;}
+    /* Sticky */
+    .TABLE._STICKY > thead {position:sticky;top:var(--header-height);border-bottom:0 !important;box-shadow: 0 0 0 1px var(--table-border-color);z-index:2;}
 
-    /* Зебра */
-    .TABLE._ZEBRA > tbody > tr:nth-child(even),
-    .TABLE._ZEBRA > tbody > tr:nth-child(even) .TABLE_SUBTITLE {background:var(--table-even-bg);}
+    /* _BORDERLESS */
+    .TABLE._BORDERLESS {box-shadow:none;}
+        .TABLE._BORDERLESS._STICKY > thead {box-shadow:none;}
+            .TABLE._BORDERLESS > :is(thead) > tr {background:var(--table-borderless-thead-bg);}
+            .TABLE._BORDERLESS > :is(thead, tbody, tfoot) > tr {border-top:0;border-bottom:0}
+                .TABLE._BORDERLESS._ZEBRA > tbody > tr:nth-child(even) {background:var(--table-borderless-even-bg);}
+
+    /* Строки в боди + Зебра */
+    .TABLE > tbody > tr {background:#fff;}
+    .TABLE._ZEBRA > tbody > tr:nth-child(even) {background:var(--table-even-bg);}
+    .TABLE._BORDERLESS._ZEBRA > tbody > tr:nth-child(even) {background:var(--table-borderless-even-bg);}
 
         /* Ячейки в боди */
         .TABLE > tbody > tr > :is(th, td) {}
         .TABLE > tbody > tr > :is(th) {text-align:left;}
         .TABLE > tbody > tr > :is(td) {}
 
-    /* Sticky */
-    .TABLE_STICKY, .TABLE._STICKY > thead {position:sticky;top:var(--header-height);border-bottom:0 !important;box-shadow: 0 0 0 1px var(--table-border-color);z-index:2;}
-    .TABLE .TABLE .TABLE_STICKY, .TABLE .TABLE._STICKY > thead {z-index:2;}
-
-    /* _BORDERLESS */
-    .TABLE._BORDERLESS {box-shadow:none;}
-        .TABLE._BORDERLESS > .TABLE_STICKY, .TABLE._BORDERLESS._STICKY > thead {box-shadow:none;}
-            .TABLE._BORDERLESS > :is(thead) > tr {background:var(--table-borderless-thead-bg);}
-            .TABLE._BORDERLESS > :is(thead, tbody, tfoot) > tr {border-top:0;border-bottom:0}
-                .TABLE._BORDERLESS._ZEBRA > tbody > tr:nth-child(even),
-                .TABLE._BORDERLESS._ZEBRA > tbody > tr:nth-child(even) > * > .TABLE_SUBTITLE {background:var(--table-borderless-even-bg);}
-
-    /* Коллапсим всё, кроме первой колонки */
-    .TABLE._NOWRAP_EXCEPT_FIRST > :is(thead, tbody, tfoot) > tr > :is(th, td):not(:first-child) {width:1px;white-space:nowrap;}
-
     /* Cell: Numeric & Nowrap */
-    .TABLE_NUMERIC {text-align:right;}
-    .TABLE_FIT {white-space:nowrap;width:1px;}
-    .TABLE_CENTERED {text-align:center;}
-
-    /* Subtable */
-    .TABLE > * > tr > :is(th, td):has(.TABLE) {padding:0;}
-    .TABLE:has(> .TABLE_STICKY) > * > tr > :is(th, td):has(.TABLE),
-    .TABLE._STICKY:has(> thead) > * > tr > :is(th, td):has(.TABLE) {padding-bottom:var(--table-th-height)}
-    .TABLE_SUBTITLE {font-weight:var(--semibold);position:sticky;top:calc(var(--header-height));padding:12px 24px 12px;z-index:2;}
-    .TABLE .TABLE {margin:0 24px 0;width:calc(100% - 24px * 2);}
+    .TC._NUMERIC {text-align:right;}
+    .TC._FIT {white-space:nowrap;width:1px;}
+    .TC._CENTER {text-align:center;}
+    .TC._LEFT   {text-align:center;}
+    .TC._RIGHT  {text-align:center;}
+    .TC._PADDINGLESS {padding:0;}

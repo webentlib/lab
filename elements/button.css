@@ -156,6 +156,8 @@ Now, its not technically convenient, and probably dab from perspective of good d
 :is(.BUTTON, .BUTTONS_LABEL)._HUGE  {--button-height:calc(var(--button-default-height) + 18px);--button-font-size:calc(var(--button-default-font-size) + 6px);}
 :is(.BUTTON, .BUTTONS_LABEL)._GIANT {--button-height:calc(var(--button-default-height) + 24px);--button-font-size:calc(var(--button-default-font-size) + 8px);}
 
+:is(.BUTTON, .BUTTONS_LABEL)._40   {--button-height:40px; --button-font-size:calc(var(--button-default-font-size) + 1px);}
+
 /* LOADING */
 
 .BUTTON {                         /* Let's set background params for ._LOADING, so "loader" will not smoothly jump when "transition:all 0.1s ease;" set somewhere globally */
