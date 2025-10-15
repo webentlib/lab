@@ -1,6 +1,10 @@
 .TABLE {
-    box-shadow:0 0 0 1px var(--table-border-color);--table-padding-x:12px;--table-padding-y:6px;line-height:24px;
-    --table-th-height:36px;
+    box-shadow:0 0 0 1px var(--table-border-color);
+    line-height:20px;
+    --table-padding-x:10px;
+    --table-padding-y:6px;
+    --table-th-height:44px;
+    --table-thead-th-padding-y:12px;
 }
 .TABLE._STRETCH {width:100%}
 
@@ -19,7 +23,7 @@
     /* Строки в шапке */
     .TABLE > thead > tr {}
         /* Ячейки в шапке */
-        .TABLE > thead > tr > th {font-size:var(--font-size-small);font-weight:var(--bold);text-align:center;}
+        .TABLE > thead > tr > th {font-size:var(--font-size-small);font-weight:var(--bold);text-align:center;padding-top:var(--table-thead-th-padding-y);padding-bottom:var(--table-thead-th-padding-y)}
 
     /* Sticky */
     .TABLE._STICKY > thead {position:sticky;top:var(--header-height);border-bottom:0 !important;box-shadow: 0 0 0 1px var(--table-border-color);z-index:2;}

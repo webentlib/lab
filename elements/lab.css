@@ -9,10 +9,11 @@
     --body-bg:hsl(0, 0%, 97%);
     --form-bg:hsl(0, 0%, 98.5%);
 
-    --table-thead-bg:hsl(0, 0%, 95.5%);
+    --table-thead-bg:hsl(0, 0%, 98.5%); /* 95.0 */
+    --table-filter-bg:hsl(0, 0%, 98.5%);
     --table-even-bg:hsl(0, 0%, 98.5%);
 
-    --table-borderless-thead-bg:hsl(0, 0%, 93.0%);
+    --table-borderless-thead-bg:hsl(0, 0%, 95.5%); /* 93.0 */
     --table-borderless-even-bg:hsl(0, 0%, 95.5%);
 
     /* COMMON */
@@ -62,7 +63,8 @@
 
     /* LEGENDS */
 
-    --legend-gray: hsl(0, 0%, 94%);
+    --legend-light-gray: hsl(0, 0%, 94%);
+    --legend-gray: hsl(0, 0%, 65%);
 
     /* MENU LINKS */
 
