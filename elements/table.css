@@ -3,8 +3,8 @@
     line-height:20px;
     --table-padding-x:10px;
     --table-padding-y:6px;
-    --table-th-height:44px;
-    --table-thead-th-padding-y:12px;
+    --table-thead-th-padding-y:var(--table-padding-y);
+    --table-th-height:calc(20px + var(--table-padding-y) * 2);
 }
 .TABLE._STRETCH {width:100%}
 
