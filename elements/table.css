@@ -49,6 +49,6 @@
     .TC._NUMERIC {text-align:right;}
     .TC._FIT {white-space:nowrap;width:1px;}
     .TC._CENTER {text-align:center;}
-    .TC._LEFT   {text-align:center;}
-    .TC._RIGHT  {text-align:center;}
+    .TC._LEFT   {text-align:left;}
+    .TC._RIGHT  {text-align:right;}
     .TC._PADDINGLESS {padding:0;}
