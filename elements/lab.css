@@ -9,12 +9,36 @@
     --body-bg:hsl(0, 0%, 97%);
     --form-bg:hsl(0, 0%, 98.5%);
 
-    --table-thead-bg:hsl(0, 0%, 98.5%); /* 95.0 */
-    --table-filter-bg:hsl(0, 0%, 98.5%);
-    --table-even-bg:hsl(0, 0%, 98.5%);
+    /* TABLE */
 
-    --table-borderless-thead-bg:hsl(0, 0%, 95.5%); /* 93.0 */
-    --table-borderless-even-bg:hsl(0, 0%, 95.5%);
+    /* paddings */
+    --table-padding-x:12px;
+    --table-padding-y:var(--table-padding-x);
+
+    /* borders */
+    --table-border-width:1px;
+    --table-border-width-x:var(--table-border-width);
+    --table-border-width-y:var(--table-border-width);
+
+    /* design */
+    --table-border-radius:var(--border-radius);
+    --table-text-align:left;
+    --table-vertical-align:middle;
+    --table-thead-th-font-weight:var(--bold);
+    --table-th-font-weight:var(--semibold);
+    --table-font-size:15px;
+    --table-line-height:24px;
+    --table-z-index:2;
+    --table-outline-width:1px;
+
+    /* colors */
+    --table-bg:           #fff;
+    --table-thead-bg:     hsl(0, 0%, 98.5%);
+    --table-tiger-even-bg:hsl(0, 0%, 98.5%);
+    --table-zebra-even-bg:hsl(0, 0%, 95.5%);
+    --table-border-color: hsl(0, 0%, 88%);
+
+    /* /TABLE */
 
     /* COMMON */
 
@@ -51,7 +75,6 @@
     --placeholder:              hsl(0, 0%, 70%); /* Всем инпутам, текстареям, контентедитаблам и т.д. */
     --loader-element:           hsl(0, 0%, 60%); /* Лоадер. Не забыть также поменять и в buttons.css .BUTTON._LOADING */
     --loader-text:              hsl(0, 0%, 50%);
-    --table-border-color:       hsl(0, 0%, 88%);
     --separator:                hsl(0, 0%, 88%); /* Для <hr>; бордера в ленте материалов */
     --tab-underline-color:      hsl(0, 0%, 80%);
     --popup-outside:            rgba(0,0,0,0.8); /* Цвет фона всех попапов */

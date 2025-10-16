@@ -1,54 +1,55 @@
 .TABLE {
-    box-shadow:0 0 0 1px var(--table-border-color);
-    line-height:20px;
-    --table-padding-x:10px;
-    --table-padding-y:6px;
-    --table-thead-th-padding-y:var(--table-padding-y);
-    --table-th-height:calc(20px + var(--table-padding-y) * 2);
+    /* ЖИРНОСТЬ ДЛЯ THEAD TH и ОСТАЛЬНЫХ */
+
+    /* Глобально сказать всем таблицам — никаких бордеров по Х */
+
+    --table-sticky-height:
+        calc(calc(--table-thead-line-height) +
+        var(--table-padding-y) +
+        var(--table-padding-y) +
+        var(--table-border-width-y)
+    );
+
+    box-shadow:0 0 0 var(--table-outline-width) var(--table-border-color);
+    border-radius:var(--table-border-radius);
 }
+
+/* TABLE MODIFIERS */
+
 .TABLE._STRETCH {width:100%}
+.TABLE._STICKY > *:first-child {position:sticky;top:var(--header-height);z-index:var(--table-z-index);}
 
-    /* Шапка */
+.TABLE._TIGER > tbody > tr:nth-child(even) > :is(th, td) {background:var(--table-tiger-even-bg) !important;}
+.TABLE._ZEBRA > tbody > tr:nth-child(even) > :is(th, td) {background:var(--table-zebra-even-bg) !important;}
 
-    .TABLE > thead {border-bottom:1px solid var(--table-border-color);background:var(--table-thead-bg);}
-    .TABLE > :is(tbody, tfoot) {background:#fff;}
+/* CELLS */
 
-    /* Строки */
-    .TABLE > :is(thead, tbody, tfoot) > tr {}
-    .TABLE > :is(thead, tbody, tfoot) > tr:not(:first-child) {border-top:1px solid var(--table-border-color)}
+/* common */
+.TABLE > * > tr > :is(th, td) {
+    background:var(--table-bg);
+    padding:
+            var(--table-padding-y)
+            var(--table-padding-x)
+            calc(var(--table-padding-y) + var(--table-border-width-y))
+            var(--table-padding-x);
+    text-align:var(--table-text-align);
+    vertical-align:var(--table-vertical-align);
+    box-shadow:inset 0 calc(var(--table-border-width-y) * -1) 0 var(--table-border-color);
+    border-right:var(--table-border-width-x) solid var(--table-border-color);
+    line-height:var(--table-line-height);
+    font-size:var(--table-font-size);
+}
 
-        /* Ячейки */
-        .TABLE > * > tr > :is(th, td) {padding:var(--table-padding-y) var(--table-padding-x) var(--table-padding-y) var(--table-padding-x);vertical-align:middle;}
+/* border-radius */
+.TABLE > *:first-child > tr > :is(th, td):first-child {border-top-left-radius:    var(--table-border-radius);}
+.TABLE > *:first-child > tr > :is(th, td):last-child  {border-top-right-radius:   var(--table-border-radius);}
+.TABLE > *:last-child  > tr > :is(th, td):first-child {border-bottom-left-radius: var(--table-border-radius);}
+.TABLE > *:last-child  > tr > :is(th, td):last-child  {border-bottom-right-radius:var(--table-border-radius);}
 
-    /* Строки в шапке */
-    .TABLE > thead > tr {}
-        /* Ячейки в шапке */
-        .TABLE > thead > tr > th {font-size:var(--font-size-small);font-weight:var(--bold);text-align:center;padding-top:var(--table-thead-th-padding-y);padding-bottom:var(--table-thead-th-padding-y)}
+/* border */
+.TABLE > *:last-child > tr:last-child > :is(th, td) {box-shadow:none;}
+.TABLE > * > tr > :is(th, td):last-child {border-right:0;}
 
-    /* Sticky */
-    .TABLE._STICKY > thead {position:sticky;top:var(--header-height);border-bottom:0 !important;box-shadow: 0 0 0 1px var(--table-border-color);z-index:2;}
-
-    /* _BORDERLESS */
-    .TABLE._BORDERLESS {box-shadow:none;}
-        .TABLE._BORDERLESS._STICKY > thead {box-shadow:none;}
-            .TABLE._BORDERLESS > :is(thead) > tr {background:var(--table-borderless-thead-bg);}
-            .TABLE._BORDERLESS > :is(thead, tbody, tfoot) > tr {border-top:0;border-bottom:0}
-                .TABLE._BORDERLESS._ZEBRA > tbody > tr:nth-child(even) {background:var(--table-borderless-even-bg);}
-
-    /* Строки в боди + Зебра */
-    .TABLE > tbody > tr {background:#fff;}
-    .TABLE._ZEBRA > tbody > tr:nth-child(even) {background:var(--table-even-bg);}
-    .TABLE._BORDERLESS._ZEBRA > tbody > tr:nth-child(even) {background:var(--table-borderless-even-bg);}
-
-        /* Ячейки в боди */
-        .TABLE > tbody > tr > :is(th, td) {}
-        .TABLE > tbody > tr > :is(th) {text-align:left;}
-        .TABLE > tbody > tr > :is(td) {}
-
-    /* Cell: Numeric & Nowrap */
-    .TC._NUMERIC {text-align:right;}
-    .TC._FIT {white-space:nowrap;width:1px;}
-    .TC._CENTER {text-align:center;}
-    .TC._LEFT   {text-align:left;}
-    .TC._RIGHT  {text-align:right;}
-    .TC._PADDINGLESS {padding:0;}
+/* font-weight */
+.TABLE > * > tr > th {font-weight:var(--table-th-font-weight);}
+.TABLE > thead > tr > th {font-weight:var(--table-thead-th-font-weight);}

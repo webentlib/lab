@@ -34,11 +34,3 @@
                     border-top:1px solid var(--table-border-color);
                     padding-top:var(--cards-space);
                 }
-
-    /* Cell: Numeric & Nowrap */
-    .CC._NUMERIC {text-align:right;}
-    .CC._FIT {white-space:nowrap;width:1px;}
-    .CC._CENTER {text-align:center;}
-    .CC._LEFT   {text-align:center;}
-    .CC._RIGHT  {text-align:center;}
-    .CC._PADDINGLESS {padding:0;}

@@ -1,7 +1,5 @@
 .HR {height:1px;background:var(--separator);}
 
-.NOWRAP {white-space:nowrap;}
-
 .NOSCROLLBAR {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
@@ -11,3 +9,15 @@
 .NOSCROLLBAR::-webkit-scrollbar {
     display: none;  /* Older Safari and Chromium */
 }
+
+.NOWRAP      {white-space:nowrap;}
+.FIT         {white-space:nowrap;width:1px;}
+.PADDINGLESS {padding:0;}
+
+.CENTER {text-align:center !important;;}
+.LEFT   {text-align:left !important;;}
+.RIGHT  {text-align:right !important;;}
+
+.TOP    {vertical-align:top !important;}
+.BOTTOM {vertical-align:middle !important;;}
+.MIDDLE {vertical-align:bottom !important;;}
