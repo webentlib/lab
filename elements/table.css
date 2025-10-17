@@ -19,8 +19,8 @@
 .TABLE._STRETCH {width:100%}
 .TABLE._STICKY > *:first-child {position:sticky;top:var(--header-height);z-index:var(--table-z-index);}
 
-.TABLE._TIGER > tbody > tr:nth-child(even) > :is(th, td) {background:var(--table-tiger-even-bg) !important;}
-.TABLE._ZEBRA > tbody > tr:nth-child(even) > :is(th, td) {background:var(--table-zebra-even-bg) !important;}
+.TABLE._ZEBRA > tbody > tr:nth-child(odd)  > :is(th, td) {background:var(--table-stripe-bg) !important;}
+.TABLE._TIGER > tbody > tr:nth-child(even) > :is(th, td) {background:var(--table-stripe-bg) !important;}
 
 /* CELLS */
 

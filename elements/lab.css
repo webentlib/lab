@@ -33,9 +33,8 @@
 
     /* colors */
     --table-bg:           #fff;
-    --table-thead-bg:     hsl(0, 0%, 98.5%);
-    --table-tiger-even-bg:hsl(0, 0%, 98.5%);
-    --table-zebra-even-bg:hsl(0, 0%, 95.5%);
+    --table-thead-bg:     hsl(0, 0%, 94%);
+    --table-stripe-bg:    hsl(0, 0%, 94%);
     --table-border-color: hsl(0, 0%, 88%);
 
     /* /TABLE */
