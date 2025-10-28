@@ -1,0 +1,43 @@
+:root {
+    --scrollbar-width:0;
+}
+
+/* RESET */
+
+* {margin:0;padding:0;box-sizing:border-box;}
+*:not(input, label, select, textarea) {vertical-align:top;}
+
+table {border-collapse:collapse;}
+
+img {line-height:0;}
+
+/* COMMON */
+
+a, button {
+    -webkit-tap-highlight-color:transparent; /* https://stackoverflow.com/a/3516243/4117781 */
+}
+
+a:not([href]) {
+    -webkit-user-select:none; /* Safari fallback only */
+    -moz-user-select:none; /* Firefox */
+    -ms-user-select:none; /* IE10+ */
+    user-select:none;
+    cursor:pointer;
+}
+
+[draggable="false"] {
+    -webkit-user-select:none; /* Safari fallback only */
+    -moz-user-select:none; /* Firefox */
+    -ms-user-select:none; /* IE10+ */
+    user-select:none;
+}
+
+@media (hover:none) {
+    a:hover:not(:active) {text-decoration:none !important;}
+}
+
+/* LAYOUT */
+
+html {display:contents;}
+body {min-width:fit-content;overflow-y:scroll;}
+body._SCROLL_DISABLED {overflow:hidden;padding-right:var(--scrollbar-width);}

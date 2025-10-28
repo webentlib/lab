@@ -1,10 +1,9 @@
 .CHIPS {
     display:inline-flex;
-    background:var(--control-border-color);
+    background:var(--interactive-border-color);
     border-radius:var(--border-radius);
     min-height:var(--control-height);
     --chip-padding:calc(var(--control-height) / 2 - var(--chip-border-width) - 1px);  /* In case of 36 — padding 'll be 16 */
-    --chip-border-width:1px
 }
 .CHIPS._STRETCH {display:flex;}
 
@@ -20,7 +19,7 @@
         border-radius:var(--border-radius);
         min-height:var(--control-height);
         font-size:calc(var(--control-font-size));
-        border:var(--chip-border-width) solid var(--control-border-color);
+        border:var(--chip-border-width) solid var(--interactive-border-color);
         display:inline-flex;
         align-items:center;
         justify-content:center;
@@ -44,5 +43,4 @@
         color:#fff;
         z-index:1;
     }
-
         .CHIP input {display:none;}

@@ -12,7 +12,7 @@
 
         .LABEL {font-size:15px;line-height:20px;min-height:20px;font-weight:var(--bold);display:block;margin:0 0 6px;}
 
-        .FIELD._OPTIONAL .LABEL {color:var(--optional)}
+        .FIELD._OPTIONAL .LABEL {color:var(--secondary)}
         .FIELD:has(input:focus) .LABEL {}
         .FIELD._ERROR .INPUT:focus {outline:3px solid var(--error);}
         /* [Тут контролы, у них своя логика] */

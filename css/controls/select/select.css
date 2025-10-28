@@ -8,7 +8,7 @@
 .SELECT {
     height:var(--control-height);
     font-size:var(--control-font-size);
-    border:var(--control-border-width) solid var(--control-border-color);
+    border:var(--control-border-width) solid var(--interactive-border-color);
     border-radius:var(--border-radius);
     max-height:var(--control-height);
     line-height:calc(var(--control-height) - var(--control-border-width));
@@ -19,26 +19,29 @@
     -webkit-appearance: none;
 
     background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='%23000000' stroke-width='1' d='M6 9l6 6l6 -6'/%3e%3c/svg%3e");
-    background-color:#fff; /* Для FF */
     background-repeat:no-repeat;
-    background-position-x:calc(100% - 6px);
+    background-position-x:calc(100% - 4px);
     background-position-y:calc(50%);
     background-size:24px 24px;
 
     --option-height:var(--control-height);
 }
+.SELECT._STRETCH {width:100%;}
 .SELECT._INLINE {min-width:auto;}
 .SELECT._ROUNDED {border-radius:50vh;}
 .SELECT._SHORT_OPTIONS {
     --option-height:calc(var(--control-height) / 4 * 3);
 }
+.SELECT._SHRINKY {
+    width:auto;
+}
 .SELECT._STYLED {
-    width:100%;
     padding-right:0;
 }
 
 /* Если выбрано дефолтное значение без value — делаем текст сереньким */
-.SELECT:has(option[value=""]:checked) {color:var(--select-placeholder);}
+.SELECT:has(option[value=""]:checked),
+.SELECT:has(.SELECT_DEFAULT_OPTION:checked) {color:var(--secondary);}
 
 
 /* Пусть на мобильных девайсах выпадающий список останется нативным */
@@ -51,13 +54,15 @@
     position:relative;
 }
 
+.SELECT._STYLED:before {background:#fff;width:34px;content:'';position:absolute;top:0;right:0;bottom:0;}
+
     .SELECT._STYLED::picker-icon {
         content:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='%23000000' stroke-width='1' d='M6 9l6 6l6 -6'/%3e%3c/svg%3e");
         width:24px;
         height:24px;
-        padding-left:6px;
-        padding-right:6px;
-        position:relative;
+        padding-left:4px;
+        padding-right:4px;
+        z-index:1;position:absolute;right:0;top:0;/*background:#fff;*/
         top:calc(50% - 12px);
         box-sizing: content-box;
         flex-shrink:0;
@@ -70,9 +75,9 @@
 .SELECT._STYLED::picker(select) {
     appearance:base-select;
     border:0;
-    border-left:var(--control-border-width) solid var(--control-border-color);
-    border-right:var(--control-border-width) solid var(--control-border-color);
-    box-shadow:0 var(--control-border-width) 0 var(--control-border-color), 0 calc(var(--control-border-width) * -1) 0 var(--control-border-color);
+    border-left:var(--control-border-width) solid var(--interactive-border-color);
+    border-right:var(--control-border-width) solid var(--interactive-border-color);
+    box-shadow:0 var(--control-border-width) 0 var(--interactive-border-color), 0 calc(var(--control-border-width) * -1) 0 var(--interactive-border-color);
     border-radius:var(--border-radius);
     scrollbar-width:none;
     -ms-overflow-style:none;
@@ -81,13 +86,15 @@
 
 .SELECT._ROUNDED._STYLED::picker(select) {border-radius:calc(var(--option-height) / 2);}
 
+/* Select */
+.SELECT._STYLED:active, .SELECT._STYLED:active:before {background:var(--hover);}
+
 /* option */
 .SELECT._STYLED option {padding:0 12px 0 4px;min-height:var(--option-height);line-height:var(--option-height);white-space:normal;}
 
-/* Единые для селекта и option */
 :is(.SELECT._STYLED, .SELECT._STYLED option) {display:flex;gap:0;font-size:var(--control-font-size);}
-:is(                 .SELECT._STYLED option):hover {background:var(--hover-alpha);}
-:is(.SELECT._STYLED, .SELECT._STYLED option):active {background:var(--active-alpha);}
+:is(                 .SELECT._STYLED option):hover {background:var(--hover);}
+:is(                 .SELECT._STYLED option):active {background:var(--active);}
 
     .SELECT._STYLED option::checkmark {
         content:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='none' stroke='%23000000' stroke-width='1' d='M5 12l5 5l10 -10'/%3e%3c/svg%3e");
@@ -104,7 +111,7 @@
 
 .SELECT_WITH_ICON {display:flex;align-items:center;background:#fff;border-radius:var(--border-radius);position:relative;}
 .SELECT_WITH_ICON._INLINE {display:inline-flex;}
-    .SELECT_ICON {width:36px;height:36px;display:flex;justify-content:center;align-items:center;z-index:0}
+    .SELECT_ICON {width:36px;height:36px;display:flex;justify-content:center;align-items:center;z-index:2}
     .SELECT_WITH_ICON .SELECT {background-color:unset;z-index:1;position:relative;}
 
 .SELECT_WITH_ICON._ICON_INSIDE {position:relative;}
@@ -112,9 +119,9 @@
     .SELECT_WITH_ICON._ICON_INSIDE .SELECT {padding-left:calc(36px);}
 
 .SELECT_WITH_ICON._ICON_AS_LABEL {}
-    .SELECT_WITH_ICON._ICON_AS_LABEL .SELECT_ICON {position:absolute;top:0;left:0;background:var(--highlight-bleak);border:1px solid var(--control-border-color);border-radius:var(--border-radius) 0 0 var(--border-radius);}
-    .SELECT_WITH_ICON._ICON_AS_LABEL:hover .SELECT_ICON:not(:hover) {border-color:var(--control-border-color-hover);}
-    .SELECT_WITH_ICON._ICON_AS_LABEL:active .SELECT_ICON:not(:active) {border-color:var(--control-border-color-active);}
+    .SELECT_WITH_ICON._ICON_AS_LABEL .SELECT_ICON {position:absolute;top:0;left:0;background:var(--body-bg-triple);border:1px solid var(--interactive-border-color);border-radius:var(--border-radius) 0 0 var(--border-radius);}
+    .SELECT_WITH_ICON._ICON_AS_LABEL:hover .SELECT_ICON:not(:hover) {border-color:var(--interactive-border-color-hover);}
+    .SELECT_WITH_ICON._ICON_AS_LABEL:active .SELECT_ICON:not(:active) {border-color:var(--interactive-border-color-active);}
     .SELECT_WITH_ICON._ICON_AS_LABEL .SELECT {padding-left:calc(36px + 12px);}
 
 .SELECT_WITH_ICON:has(.SELECT._ROUNDED) {

@@ -1,0 +1,229 @@
+/* OVERRIDE THIS */
+:root {
+    --header-height:0;
+}
+
+/* COMMON */
+:root {
+    --border-radius: 2px;
+    --transition-speed: 0.2s;
+
+    --bold:     600;
+    --semibold: 500;
+
+    --line-height: 24px;
+
+    --font-size-tiny:  12px;
+    --font-size-small: 14px;
+    --font-size:       16px;
+    --font-size-big:   18px;
+    --font-size-large: 20px;
+    --font-size-huge:  22px;
+}
+
+/* COLORS */
+:root {
+
+    /* light bg */
+
+    --body-bg:        hsl(0, 0%, 97%);   /* Основной фон */
+    --body-bg-half:   hsl(0, 0%, 98.5%); /* Отлично для шапки/фильтра таблиц, заголовков блоков */
+    --body-bg-darken: hsl(0, 0%, 95.5%); /* Отлично для зебры/тигра таблиц */
+    --body-bg-double: hsl(0, 0%, 94%);   /* ДЛЯ КРАСОТЫ КАРТИНЫ, НЕ ИСПОЛЬЗУЕТСЯ В БИБЛИОТЕКЕ */
+    --body-bg-triple: hsl(0, 0%, 92.5%); /* Отлично для фона легенд */
+
+    /* dark bg */
+
+    --dark-bg:  hsl(0, 0%, 50%);  /* ДЛЯ КРАСОТЫ КАРТИНЫ, НЕ ИСПОЛЬЗУЕТСЯ В БИБЛИОТЕКЕ */
+    --gray-bg:  hsl(0, 0%, 65%);  /* Отлично для фона счётчиков */
+    --bleak-bg: hsl(0, 0%, 80%);  /* ДЛЯ КРАСОТЫ КАРТИНЫ, НЕ ИСПОЛЬЗУЕТСЯ В БИБЛИОТЕКЕ */
+
+    /* border */
+
+    --border-color: hsl(0, 0%, 90%); /* цвет рамки в большинстве случаев — таблиц, плавающих блоков */
+
+    --interactive-border-color:         hsl(0, 0%, 85%); /* цвет рамки инпутов/селектов/кнопок */
+    --interactive-border-color-hover:   hsl(0, 0%, 80%); /* цвет рамки инпутов/селектов/кнопок при наведении */
+    --interactive-border-color-active:  hsl(0, 0%, 75%); /* цвет рамки инпутов/селектов/кнопок при нажатии */
+    --interactive-border-color-current: hsl(0, 0%, 70%); /* цвет рамки инпутов/селектов/кнопок (текущей) */
+
+    --underline-color: hsla(0, 0%, 0%, 0.2); /* цвет толстой рамки для подчёркивания активного пункта меню (напрример в TABS) */
+    --outline-color:   hsla(0, 0%, 0%, 0.2);   /* цвет outline-рамки по умолчанию (актуально для дефолтных кнопок) */
+
+    /* font */
+
+    --secondary:   hsl(0, 0%, 40%); /* Для дат, лейблов необязательных полей, и placeholder-а у select-а */
+    --tip:         hsl(0, 0%, 50%); /* Универсальный серый цвет для подсказок и т.д. */
+    --meta:        hsl(0, 0%, 60%); /* Для мелких сносок */
+    --placeholder: hsl(0, 0%, 70%); /* Всем инпутам, текстареям, контентедитаблам и т.д. */
+
+    /* box-shadow */
+
+    --box-shadow: 0 0 1px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.25);
+
+    /* menu links */
+
+    --hover:   hsl(0, 0%, 96%);
+    --current: hsl(0, 0%, 92%);
+    --opened:  hsl(0, 0%, 88%);
+    --active:  hsl(0, 0%, 90%);
+
+    --hover-alpha:   hsla(0, 0%, 0%, 0.04);
+    --current-alpha: hsla(0, 0%, 0%, 0.08);
+    --opened-alpha:  hsla(0, 0%, 0%, 0.12);
+    --active-alpha:  hsla(0, 0%, 0%, 0.10);
+}
+
+/* BRIGHT COLORS */
+:root {
+    --blue-h:220;
+    --green-h:130;
+    --red-h:0;
+    --orange-h:15;
+
+    --blue:hsl(var(--blue-h), 90%, 55%);
+    --green:hsl(var(--green-h), 75%, 40%);
+    --red:hsl(var(--red-h), 100%, 50%);
+    --orange:hsl(var(--orange-h), 80%, 50%);
+    --gray:hsl(0, 0%, 50%);
+    --dark:hsl(0, 0%, 0%);
+
+    --link:var(--blue);
+    --error:var(--orange);
+    --success:var(--green);
+}
+
+/* CONTROLS */
+:root {
+    --control-base-font-size: 16px;
+    --control-base-height:    36px;
+
+    --control-outline: hsl(var(--blue-h), 100%, 55%);
+
+    --control-bg:        #fff; /* hsl(0, 0%, 95%); */
+    --control-bg-hover:  #fff; /* hsl(0, 0%, 90%); */
+    --control-bg-active: #fff; /* hsl(0, 0%, 85%); */
+
+    --control-bright-bg:        hsl(var(--blue-h), 100%, 55%);
+    --control-bright-bg-hover:  hsl(var(--blue-h), 100%, 65%);
+    --control-bright-bg-active: hsl(var(--blue-h), 100%, 45%);
+
+    --control-transition-speed: 0.1s;
+    --control-border-width:     1px;
+}
+
+/* BUTTONS */
+:root {
+    --button-font-weight: var(--semibold);
+
+    --button-border-width: 1px;
+    --button-border-style: solid; /* outset is also nice */
+
+    --button-focus-outline-width: 3px;
+    --button-outline-style: solid;
+
+    --button-border-radius: var(--border-radius);
+    --button-transition-speed: var(--transition-speed);
+
+    /* Default */
+
+    --button-default-font-size: var(--font-size);
+    --button-default-height: 36px;
+
+    /* Colored */
+
+    --button-colored-font-color:  #fff;
+    --button-colored-border-width: 0px; /* px is required even if 0px */
+    --button-colored-border-style: solid; /* outset is also nice */
+    --button-colored-border-color: rgba(0,0,0,0.15);
+
+    --button-blue:   var(--blue);
+    --button-green:  var(--green);
+    --button-red:    var(--red);
+    --button-orange: var(--orange);
+    --button-gray:   var(--gray);
+    --button-dark:   var(--dark);
+
+    --button-group-label-text-color:       hsl(0, 0%, 50%);
+    --button-group-label-solid-background: hsl(0, 0%, 95%);
+    --button-group-label-border-color:     var(--button-border-color);
+}
+
+/* TABLE */
+:root {
+
+    /* paddings */
+    --table-padding-x: 12px;
+    --table-padding-y: var(--table-padding-x);
+
+    /* borders */
+    --table-border-width: 1px;
+    --table-border-width-x: var(--table-border-width);
+    --table-border-width-y: var(--table-border-width);
+
+    /* design */
+    --table-border-radius: var(--border-radius);
+    --table-text-align: left;
+    --table-vertical-align: middle;
+    --table-thead-th-font-weight: var(--bold);
+    --table-th-font-weight: var(--semibold);
+    --table-line-height: var(--line-height);
+    --table-font-size: var(--font-size);
+    --table-sticky-header-z-index: 2;
+    --table-outline-width: 1px;
+
+    /* colors */
+    --table-bg:           #fff;
+    --table-thead-bg:     var(--body-bg-half);
+    --table-stripe-bg:    var(--body-bg-darken);
+    --table-border-color: var(--border-color);
+}
+
+/* MISC COMPONENTS */
+:root {
+
+    /* FORM */
+
+    --form-bg: var(--body-bg-half);
+
+    /* LOADER */
+
+    --loader-element: var(--meta);
+    --loader-text: var(--tip);
+
+    /* POPUP */
+
+    --popup-outside: rgba(0, 0, 0, 0.8); /* Цвет фона всех попапов */
+
+    /* LEGENDS */
+
+    --legend-bg: var(--body-bg-triple);
+
+    /* COUNTER */
+
+    --counter-bg: var(--gray-bg);
+
+    /* CHIPS */
+
+    --chip-border-width: 1px;
+
+    /* HIGHLIGHT */
+
+    --highlight-border-color:        var(--border-color);
+    --highlight-border-color-light:  var(--border-color);
+    --highlight-border-color-blue:   var(--blue);
+    --highlight-border-color-green:  var(--green);
+    --highlight-border-color-red:    var(--red);
+    --highlight-border-color-orange: var(--orange);
+    --highlight-border-color-gray:   var(--gray);
+    --highlight-border-color-dark:   var(--dark);
+
+    --highlight-bg:        #fff;
+    --highlight-bg-light:  var(--border-color);
+    --highlight-bg-blue:   color-mix(in oklab, var(--blue), #fff 90%);
+    --highlight-bg-green:  color-mix(in oklab, var(--green), #fff 90%);
+    --highlight-bg-red:    color-mix(in oklab, var(--red), #fff 90%);
+    --highlight-bg-orange: color-mix(in oklab, var(--orange), #fff 90%);
+    --highlight-bg-gray:   color-mix(in oklab, var(--gray), #fff 90%);
+    --highlight-bg-dark:   color-mix(in oklab, var(--dark), #fff 90%);
+}

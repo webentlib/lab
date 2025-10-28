@@ -42,7 +42,7 @@ Now, its not technically convenient, and probably dab from perspective of good d
 	--button-outline-width:0;
 	outline-width:var(--button-outline-width);
 	outline-style:var(--button-outline-style);
-	--button-outline-color:var(--button-default-outline-color);
+	--button-outline-color:var(--outline-color);
 	outline-color:var(--button-outline-color);
 	
 	--button-padding:calc(var(--button-height) / 2 - var(--button-border-width) - 1px);  /* In case of 36 — padding 'll be 16 */
@@ -57,17 +57,17 @@ Now, its not technically convenient, and probably dab from perspective of good d
 	/* DEFAULT BUTTON */
 	--button-font-size:var(--button-default-font-size);
 	--button-height:var(--button-default-height);
-	--button-text-color:var(--button-default-text-color);
+	--button-text-color:#000;
 
-	--button-background:        var(--button-default-background);
-	--button-background-hover:  var(--button-default-background-hover);
-	--button-background-active: var(--button-default-background-active);
-	--button-background-current:var(--button-default-background-current);
+	--button-background:        #fff;
+	--button-background-hover:  var(--hover);
+	--button-background-active: var(--active);
+	--button-background-current:var(--current);
 
-    --button-border-color:        var(--button-default-border-color);
-    --button-border-color-hover:  var(--button-default-border-color-hover);
-    --button-border-color-active: var(--button-default-border-color-active);
-    --button-border-color-current:var(--button-default-border-color-current);
+    --button-border-color:        var(--interactive-border-color);
+    --button-border-color-hover:  var(--interactive-border-color-hover);
+    --button-border-color-active: var(--interactive-border-color-active);
+    --button-border-color-current:var(--interactive-border-color-current);
 }
 
 /* PADDING */

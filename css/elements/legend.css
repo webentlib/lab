@@ -1,0 +1,2 @@
+.LEGENDS {display:flex;flex-wrap:wrap;gap:8px;}
+    .LEGEND {border:1px solid var(--border-color);background:#fff;padding:0 12px;border-radius:var(--border-radius);line-height:36px;}

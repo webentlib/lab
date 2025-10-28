@@ -2,9 +2,9 @@
     .DROPDOWN_WINDOW {position:absolute;top:calc(100% + 1px);left:0;background:#fff;box-shadow:var(--box-shadow);justify-content:stretch;border-radius:var(--border-radius);}
     .DROPDOWN_WINDOW._RIGHT {right:0;left:auto;}
         .DROPDOWN_ITEM {display:flex;padding:0 24px;min-height:48px;line-height:24px;white-space:nowrap;text-decoration:none;align-items:center;}
-        .DROPDOWN_ITEM:hover {background:var(--hover)}
-        .DROPDOWN_ITEM:active {background:var(--active)}
-        .DROPDOWN_ITEM._CURRENT {background:var(--current)}
+        .DROPDOWN_ITEM:hover {background-color:var(--hover)}
+        .DROPDOWN_ITEM:active {background-color:var(--active)}
+        .DROPDOWN_ITEM._CURRENT {background-color:var(--current)}
         .DROPDOWN_ITEM:first-child {border-top-left-radius:var(--border-radius);border-top-right-radius:var(--border-radius);}
         .DROPDOWN_ITEM:last-child {border-bottom-left-radius:var(--border-radius);border-bottom-right-radius:var(--border-radius);}
             .DROPDOWN_ICON {margin-left:-12px;margin-right:12px;color:var(--tip);}

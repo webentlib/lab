@@ -1,17 +1,25 @@
-@import './elements/lab.css';
-@import './elements/button.css';
-@import './elements/table.css';
-@import './elements/cards.css';
-@import './elements/highlight.css';
-@import './elements/loader.css';
-@import './elements/tabs.css';
-@import './elements/misc.css';
-@import './elements/summary.css';
-@import './elements/dropdown.css';
-@import './elements/modal.css';
-@import './elements/legend.css';
-@import './elements/controls/form.css';
-@import './elements/controls/control.css';
-@import './elements/controls/select/select.css';
-@import './elements/controls/chips.css';
-@import './elements/division.css';
+@import './css/lab.css';
+@import './css/reset.css';
+
+@import './css/form.css';
+@import './css/misc.css';
+
+@import './css/interactive/dropdown.css';
+@import './css/interactive/modal.css';
+
+@import './css/elements/hr.css';
+@import './css/elements/counter.css';
+@import './css/elements/legend.css';
+@import './css/elements/button.css';
+@import './css/elements/loader.css';
+@import './css/elements/tabs.css';
+
+@import './css/controls/control.css';
+@import './css/controls/select/select.css';
+@import './css/controls/chips.css';
+
+@import './css/content/table.css';
+@import './css/content/cards.css';
+@import './css/content/highlight.css';
+@import './css/content/summary.css';
+@import './css/content/division.css';

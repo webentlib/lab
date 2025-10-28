@@ -4,10 +4,11 @@
 .CHECKBOX, .CHECKBOX:before, .CHECKBOX:after,
 .RADIO, .RADIO:before, .RADIO:after {transition:all var(--control-transition-speed) ease;}
 
-.INPUT, .SELECT, .TEXTAREA, .CONTENTEDITABLE {border:var(--control-border-width) solid var(--control-border-color);border-radius:var(--border-radius);padding-left:6px;padding-right:6px;}
+.INPUT, .SELECT, .TEXTAREA, .CONTENTEDITABLE {background-color:var(--control-bg);border:var(--control-border-width) solid var(--interactive-border-color);border-radius:var(--border-radius);padding-left:6px;padding-right:6px;}
 .INPUT, .TEXTAREA, .CONTENTEDITABLE {min-width:100%;}
 
-@media (hover:hover) {.INPUT:hover, .SELECT:hover, .TEXTAREA:hover, .CONTENTEDITABLE:hover, .CHECKBOX input:hover:before, .RADIO input:hover:before {border-color:var(--control-border-color-hover);}}
+@media (hover:hover) {.INPUT:hover,  .SELECT:hover,  .TEXTAREA:hover,  .CONTENTEDITABLE:hover,  .CHECKBOX input:hover:before,  .RADIO input:hover:before  {border-color:var(--interactive-border-color-hover);background-color:var(--control-bg-hover);}}
+@media (hover:hover) {.INPUT:active, .SELECT:active, .TEXTAREA:active, .CONTENTEDITABLE:active, .CHECKBOX input:active:before, .RADIO input:active:before {border-color:var(--interactive-border-color-active);background-color:var(--control-bg-active);}}
 .INPUT:focus-visible, .SELECT:focus-visible, .CHECKBOX:focus-visible, .RADIO:focus-visible, .TEXTAREA:focus-visible, .CONTENTEDITABLE:focus-visible {outline-offset:-1px;outline:3px solid var(--control-outline);position:relative;}
 
 /* sizes */
@@ -43,7 +44,7 @@
 
 .CONTENTEDITABLE._MODERN {position:relative;border:0;border-radius:0;padding:6px 0;}
 /* Делаем так хитро, чтобы ничего не прыгало, и в перспективе можно было хитро подсвечивать: */
-.CONTENTEDITABLE._MODERN:after {content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--control-border-color);}
+.CONTENTEDITABLE._MODERN:after {content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--interactive-border-color);}
 .CONTENTEDITABLE._MODERN:focus-visible {outline:none;}
 .CONTENTEDITABLE._MODERN:focus-visible:after {height:2px;background:var(--control-outline);}
 
@@ -61,14 +62,14 @@
     .CHOICE {display:inline-flex;align-items:center;font-size:16px;line-height:20px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
 
         .CHECKBOX,                       .RADIO {border:0;width:24px;height:24px;position:relative;margin-right:6px;flex-shrink:0;}
-        .CHECKBOX:before,                .RADIO:before {content:'';box-sizing:border-box;display:inline-block;border:1px solid var(--control-border-color);background:#fff;height:24px;width:24px;position:absolute;top:0;left:0;}
+        .CHECKBOX:before,                .RADIO:before {content:'';box-sizing:border-box;display:inline-block;border:1px solid var(--interactive-border-color);background:#fff;height:24px;width:24px;position:absolute;top:0;left:0;}
         @media (hover:hover) {
         .CHECKBOX:hover:before,          .RADIO:hover:before {background:var(--hover)}}
         .CHECKBOX:active:before,         .RADIO:active:before {outline:3px solid var(--control-outline);outline-offset:-2px;}
-        .CHECKBOX:checked:before,        .RADIO:checked:before {background:var(--control-outline);border-color:transparent !important;}
+        .CHECKBOX:checked:before,        .RADIO:checked:before {background:var(--control-bright-bg);border-color:transparent !important;}
         @media (hover:hover) {
-        .CHECKBOX:checked:hover:before,  .RADIO:checked:hover:before  {background:var(--control-hover)}}
-        .CHECKBOX:checked:active:before, .RADIO:checked:active:before {background:var(--control-active)}
+        .CHECKBOX:checked:hover:before,  .RADIO:checked:hover:before  {background:var(--control-bright-bg-hover)}}
+        .CHECKBOX:checked:active:before, .RADIO:checked:active:before {background:var(--control-bright-bg-active)}
 
         .CHECKBOX:before {border-radius:var(--border-radius);}
         .CHECKBOX:after {content:'';display:inline-block;transform:rotate(45deg);height:12px;width:5px;border-bottom:3px solid transparent;border-right:3px solid transparent;position:absolute;top:3px;left:8px;}
