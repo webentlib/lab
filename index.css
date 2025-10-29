@@ -2,7 +2,7 @@
 @import './css/reset.css';
 
 @import './css/form.css';
-@import './css/misc.css';
+@import './css/helpers.css';
 
 @import './css/interactive/dropdown.css';
 @import './css/interactive/modal.css';
