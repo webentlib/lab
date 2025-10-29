@@ -1,36 +1,36 @@
 # Components
 
-### Common
-form.css
-helpers.css
+### Common  
+form.css  
+helpers.css  
 
 ### Interactive
 
-dropdown.css
-modal.css
+dropdown.css  
+modal.css  
 
 ### Elements
 
-hr.css
-counter.css
-legend.css
-button.css
-loader.css
-tabs.css
+hr.css  
+counter.css  
+legend.css  
+button.css  
+loader.css  
+tabs.css  
 
 ### Controls
 
-control.css
-select/select.css
-chips.css
+control.css  
+select.css  
+chips.css  
 
 ### Content
 
-table.css
-cards.css
-highlight.css
-summary.css
-division.css
+table.css  
+cards.css  
+highlight.css  
+summary.css  
+division.css  
 
 
 # Installation
