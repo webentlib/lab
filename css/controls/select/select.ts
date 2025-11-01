@@ -11,4 +11,5 @@ export function Select(el) {
     }
     el.style.minWidth = Math.ceil(el.offsetWidth) + font_expansion_coef + 'px';
     el.classList.add('_STYLED');
+    el.disabled = false;
 }
