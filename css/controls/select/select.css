@@ -26,8 +26,7 @@
 
     --option-height:var(--control-height);
 }
-.SELECT._STRETCH {width:100%;}
-.SELECT._INLINE {min-width:auto;}
+
 .SELECT._ROUNDED {border-radius:50vh;}
 .SELECT._SHORT_OPTIONS {
     --option-height:calc(var(--control-height) / 4 * 3);
