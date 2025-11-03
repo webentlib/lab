@@ -8,6 +8,8 @@
     display: none;  /* Older Safari and Chromium */
 }
 
+.TIP {color:var(--tip);}
+
 .NOWRAP      {white-space:nowrap;}
 .FIT         {white-space:nowrap;width:1px;}
 .PADDINGLESS {padding:0;}
