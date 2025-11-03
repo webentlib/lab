@@ -112,10 +112,11 @@ Now, its not technically convenient, and probably dab from perspective of good d
 .BUTTON._GREEN      {--button-color:var(--button-green)}
 .BUTTON._RED        {--button-color:var(--button-red)}
 .BUTTON._ORANGE     {--button-color:var(--button-orange)}
+.BUTTON._PURPLE     {--button-color:var(--button-purple)}
 .BUTTON._GRAY       {--button-color:var(--button-gray)}
 .BUTTON._DARK       {--button-color:var(--button-dark)}
 
-.BUTTON:is(._BLUE, ._GREEN, ._RED, ._ORANGE, ._GRAY, ._DARK):not(:is(._BORDERED, ._LINK)) {
+.BUTTON:is(._BLUE, ._GREEN, ._RED, ._ORANGE, ._PURPLE, ._GRAY, ._DARK):not(:is(._BORDERED, ._LINK)) {
 	color:var(--button-colored-font-color);
 	border-width:var(--button-colored-border-width);
 	border-color:var(--button-colored-border-color);
@@ -169,7 +170,7 @@ Now, its not technically convenient, and probably dab from perspective of good d
 	color:transparent !important; /* Make it !important, since .BUTTON._BORDERED._[COLOR] also overrides color and have 3 classes combined, so have more css weight */
 }
 .BUTTON._LOADING                                                                              {background-image:url('data:image/svg+xml,<svg fill="hsl(0, 0%, 60%)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve"><path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"><animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"/></path></svg>')}
-.BUTTON._LOADING:not(._BORDERED, ._LINK):is(._BLUE, ._GREEN, ._RED, ._ORANGE, ._GRAY, ._DARK) {background-image:url('data:image/svg+xml,<svg fill="white"           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve"><path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"><animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"/></path></svg>')}
+.BUTTON._LOADING:not(._BORDERED, ._LINK):is(._BLUE, ._GREEN, ._RED, ._ORANGE, ._PURPLE, ._GRAY, ._DARK) {background-image:url('data:image/svg+xml,<svg fill="white"           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve"><path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"><animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"/></path></svg>')}
 
 /* ICONS */
 

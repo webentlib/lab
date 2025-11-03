@@ -80,11 +80,13 @@
     --green-h:130;
     --red-h:0;
     --orange-h:15;
+    --purple-h:270;
 
     --blue:hsl(var(--blue-h), 90%, 55%);
     --green:hsl(var(--green-h), 75%, 40%);
     --red:hsl(var(--red-h), 100%, 50%);
-    --orange:hsl(var(--orange-h), 80%, 50%);
+    --orange:hsl(var(--orange-h), 100%, 55%);
+    --purple:hsl(var(--purple-h), 100%, 55%);
     --gray:hsl(0, 0%, 50%);
     --dark:hsl(0, 0%, 0%);
 
@@ -141,6 +143,7 @@
     --button-green:  var(--green);
     --button-red:    var(--red);
     --button-orange: var(--orange);
+    --button-purple: var(--purple);
     --button-gray:   var(--gray);
     --button-dark:   var(--dark);
 
