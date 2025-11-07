@@ -1,7 +1,7 @@
 .BARS {position:relative;display:flex;align-items:stretch;}
 
 .BARS {position:relative;}
-    .BARS_WINDOW {min-width:360px;position:absolute;top:calc(var(--header-height) + 1px);height:calc(100vh - var(--header-height));left:0;background:#fff;box-shadow:var(--box-shadow);justify-content:stretch;border-radius:var(--border-radius);display:flex;flex-direction:column;z-index:9;}
+    .BARS_WINDOW {min-width:360px;position:absolute;top:calc(var(--header-height) + 1px);height:calc(100vh - var(--header-height));left:0;background:#fff;box-shadow:var(--box-shadow);justify-content:stretch;display:flex;flex-direction:column;z-index:9;}
     body._HAS_X_SCROLL .BARS_WINDOW {height:calc(100vh - var(--header-height) - var(--scrollbar-width));}
         .BARS_MENU {flex:1;padding:24px;overflow:auto;}
 
