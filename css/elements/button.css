@@ -236,7 +236,7 @@ Now, its not technically convenient, and probably dab from perspective of good d
 	.BUTTONS:not(._VERTICAL) .BUTTON:last-child  {border-top-left-radius:0;border-bottom-left-radius:0;}
 
 	.BUTTONS .BUTTON:is(:hover, :active)                         {z-index:calc(var(--button-z-index) + 1);}
-	.BUTTONS .BUTTON:is(._CURRENT, :has([type="radio"]:checked)) {z-index:calc(var(--button-z-index) + 2);}
+	.BUTTONS .BUTTON:is(._CURRENT, :has([type="radio"]:checked)) {z-index:calc(var(--button-z-index) + 2);--button-colored-border-width:1px;}
 	.BUTTONS .BUTTON:is(:focus-visible)                          {z-index:calc(var(--button-z-index) + 3);}
 
 .BUTTONS._VERTICAL {
