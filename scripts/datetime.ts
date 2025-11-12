@@ -22,6 +22,16 @@ export function Datetime(date_string, timezone=DatetimeHelper.client_timezone) {
     this.datetime = `${this.date} ${this.time}`;
     this.datetimefull = `${this.date} ${this.timefull}`;
 
+    const date = new Date(date_string);
+
+    this.local = date.toLocaleDateString('ru-RU', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+    });
+
 }
 
 export const DatetimeHelper = new function() {
