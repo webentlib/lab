@@ -95,7 +95,7 @@ Now, its not technically convenient, and probably dab from perspective of good d
 @media (hover:hover) {
 .BUTTON:not(._DISABLED, ._NO_PSEUDO, [disabled]):hover  {background-color:var(--button-background-hover);  border-color:var(--button-border-color-hover);  }}
 .BUTTON:not(._DISABLED, ._NO_PSEUDO, [disabled]):active {background-color:var(--button-background-active); border-color:var(--button-border-color-active); }
-.BUTTON:is(._CURRENT, :has([type="radio"]:checked))     {background-color:var(--button-background-current);border-color:var(--button-border-color-current);}
+.BUTTON:not(._BLUE, ._GREEN, ._RED, ._ORANGE, ._PURPLE, ._GRAY, ._DARK):is(._CURRENT, :has([type="radio"]:checked))     {background-color:var(--button-background-current);border-color:var(--button-border-color-current);}
 .BUTTON:focus-visible                                   {--button-outline-width:var(--button-focus-outline-width);}
 
 /* LINK */
