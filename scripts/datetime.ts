@@ -120,6 +120,7 @@ DatetimeHelper.diff = function(ms) {
     }
 
     const days_string = days ? days + ' ' + get_days_legend(days) : '';
+    // @ts-ignore
     const time_string = `${hours.PAD(2)}:${minutes.PAD(2)}:${seconds.PAD(2)}`;
     const format = days_string ? [days_string, time_string].join(', ') : time_string;
 
