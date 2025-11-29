@@ -8,13 +8,18 @@ export function Datetime(date_string, timezone=DatetimeHelper.client_timezone) {
     this.unawaredate = new Date(date_string).toLocaleString('sv-SE', {timeZone: timezone})
     this.awaredate = new Date(this.unawaredate)
 
-    this.day     = this.awaredate.getDate().PAD(2)
-    this.month   = (this.awaredate.getMonth() + 1).PAD(2)
+    this.day     = this.awaredate.getDate()
+    this.month   = (this.awaredate.getMonth() + 1)
     this.year    = this.awaredate.getFullYear()
     this.weekday = this.awaredate.getDay()
-    this.hours   = this.awaredate.getHours().PAD(2)
-    this.minutes = this.awaredate.getMinutes().PAD(2)
+
+    this.hours   = this.awaredate.getHours()
+    this.minutes = this.awaredate.getMinutes()
     this.seconds = this.awaredate.getSeconds()
+
+    this.hour   = this.awaredate.getHours()
+    this.minute = this.awaredate.getMinutes()
+    this.second = this.awaredate.getSeconds()
 
     this.date = `${this.day.PAD(2)}.${this.month.PAD(2)}.${this.year}`;
     this.time = `${this.hours.PAD(2)}:${this.minutes.PAD(2)}`;
@@ -24,6 +29,7 @@ export function Datetime(date_string, timezone=DatetimeHelper.client_timezone) {
 
     const date = new Date(date_string);
 
+    // Используется Яром
     this.local = date.toLocaleDateString('ru-RU', {
         day: '2-digit',
         month: 'long',

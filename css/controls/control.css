@@ -4,9 +4,8 @@
 .CHECKBOX, .CHECKBOX:before, .CHECKBOX:after,
 .RADIO, .RADIO:before, .RADIO:after {transition:all var(--control-transition-speed) ease;}
 
-.INPUT, .SELECT, .TEXTAREA, .CONTENTEDITABLE {background-color:var(--control-bg);border:var(--control-border-width) solid var(--interactive-border-color);border-radius:var(--border-radius);padding-left:6px;padding-right:6px;min-width:100%;}
-.INPUT._INLINE, .SELECT._INLINE, .TEXTAREA._INLINE, .CONTENTEDITABLE._INLINE {min-width:auto;}
-.INPUT._STRETCH, .SELECT._STRETCH, .TEXTAREA._STRETCH, .CONTENTEDITABLE._STRETCH {width:100%;}
+.INPUT, .SELECT, .TEXTAREA, .CONTENTEDITABLE {background-color:var(--control-bg);border:var(--control-border-width) solid var(--interactive-border-color);border-radius:var(--border-radius);padding-left:6px;padding-right:6px;width:100%;display:block;}
+.INPUT._INLINE, .SELECT._INLINE, .TEXTAREA._INLINE, .CONTENTEDITABLE._INLINE {width:auto;display:inline-block;}
 
 @media (hover:hover) {.INPUT:hover,  .SELECT:hover,  .TEXTAREA:hover,  .CONTENTEDITABLE:hover,  .CHECKBOX input:hover:before,  .RADIO input:hover:before  {border-color:var(--interactive-border-color-hover);background-color:var(--control-bg-hover);}}
 @media (hover:hover) {.INPUT:active, .SELECT:active, .TEXTAREA:active, .CONTENTEDITABLE:active, .CHECKBOX input:active:before, .RADIO input:active:before {border-color:var(--interactive-border-color-active);background-color:var(--control-bg-active);}}

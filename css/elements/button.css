@@ -48,7 +48,7 @@ Now, its not technically convenient, and probably dab from perspective of good d
 	--button-padding:calc(var(--button-height) / 2 - var(--button-border-width) - 1px);  /* In case of 36 — padding 'll be 16 */
 	padding:0 var(--button-padding);
 	
-	line-height:calc(var(--button-height) / 2);  /* Let it be half of height, subtract 2 for _BORDERED (it could be 1, but then it woldnot be even) */
+	line-height:calc(var(--button-height) / 2 - 2px);  /* Let it be half of height, subtract 2 for _BORDERED (it could be 1, but then it woldnot be even) */
 	
 	position:relative;
 	--button-z-index:0;
@@ -209,7 +209,7 @@ Now, its not technically convenient, and probably dab from perspective of good d
 /* SYMMETRIC */
 
 .BUTTON._SQUARE {padding:0;width:var(--button-height);flex-shrink:0;flex-basis:var(--button-height);}
-.BUTTON._ROUND  {padding:0;width:var(--button-height);flex-shrink:0;flex-basis:var(--button-height);border-radius:calc(var(--button-height) / 2);}
+.BUTTON._ROUND  {padding:0;width:var(--button-height);flex-shrink:0;flex-basis:var(--button-height);border-radius:50vh;}
 
 /* MULTILINE */
 

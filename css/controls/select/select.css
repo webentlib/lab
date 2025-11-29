@@ -14,7 +14,7 @@
     line-height:calc(var(--control-height) - var(--control-border-width));
     padding-left:calc(var(--control-height) / 4);
     padding-right:36px;
-
+    font-weight:var(--semibold);
     appearance: none;
     -webkit-appearance: none;
 

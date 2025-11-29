@@ -59,7 +59,7 @@
 
 /* LIST */
 
-.TABLES {margin-bottom:24px;display:flex;}
+.TABLES {display:flex;}
 
     .TABLES > table, .TABLES :is(th, td) {flex:1;border-radius:0 !important;}
 
