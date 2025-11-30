@@ -24,3 +24,9 @@
 @import './css/content/highlight.css';
 @import './css/content/summary.css';
 @import './css/content/division.css';
+
+/* layout */
+/*@import './css/layout.css';*/
+@import './css/layout/header.css';
+@import './css/layout/wrapper.css';
+@import './css/layout/heading.css';

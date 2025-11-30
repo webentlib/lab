@@ -1,6 +1,27 @@
 /* OVERRIDE THIS */
 :root {
-    --header-height:0;
+    --header-height:60px;
+}
+
+/* SCROLLBAR */
+:root {
+    --scrollbar-width:0;
+}
+
+/* HEADING */
+:root {
+    /* HEADING */
+    --heading-indent-top:24px;
+    --heading-indent-bottom:24px;
+    --heading-total-height:calc(var(--title-line-height) + var(--heading-indent-top) + var(--heading-indent-bottom));
+
+    /* Title */
+    --title-font-size:28px;
+    --title-line-height:36px;
+
+    /* Sub Title */
+    --sub-title-font-size:24px;
+    --sub-title-line-height:36px;
 }
 
 /* COMMON */

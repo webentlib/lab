@@ -1,0 +1,11 @@
+body {background:var(--body-bg);}
+
+body, button, input, select, textarea {
+    font-family:'Open Sans', Arial, sans-serif;
+    font-size:var(--font-size);
+    -webkit-font-smoothing:antialiased;
+}
+
+a {color:#000}
+
+h1, h2, h3, h4, h5, h6, b {font-weight:var(--semibold);}
