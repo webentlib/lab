@@ -31,8 +31,7 @@
 @import './css/content/division.css';
 
 /* layout */
+@import './css/layout.css';
+
+/* base */
 /*@import './css/layout.css';*/
-@import './css/layout/bars.css';
-@import './css/layout/header.css';
-@import './css/layout/wrapper.css';
-@import './css/layout/heading.css';
