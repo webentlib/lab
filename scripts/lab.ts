@@ -18,20 +18,3 @@ Lab.click_on_enter = function(e) {
     }
 }
 
-Lab.decode = function(encodedStr) {
-    // AI
-    const regex = /=\?([^?]+)\?([bq])\?([^?]+)\?=/gi;
-    return encodedStr.replace(regex, (match, charset, encoding, text) => {
-        if (encoding.toLowerCase() === 'b') {
-            // Base64 decoding
-            const decodedBytes = atob(text);
-            // Decode UTF-8 bytes
-            return decodeURIComponent(escape(decodedBytes));
-        } else if (encoding.toLowerCase() === 'q') {
-            // Quoted-printable decoding (not needed here since your string uses 'b')
-            // Implement if necessary
-            return text;
-        }
-        return text;
-    });
-}
