@@ -6,10 +6,9 @@
         .BARS_MENU {flex:1;padding:24px;overflow:auto;}
 
             .BARS_ITEM {display:flex;padding:0 24px;min-height:60px;line-height:24px;white-space:nowrap;text-decoration:none;align-items:center;border-radius:var(--border-radius);}
-            .BARS_ITEM:not(:first-child) {margin-top:6px;}
             .BARS_ITEM:not(._DISABLED):hover {background-color:var(--hover)}
             .BARS_ITEM:not(._DISABLED):active {background-color:var(--active)}
-            .BARS_ITEM._CURRENT {background-color:var(--current)}
+            .BARS_ITEM._CURRENT {background-color:var(--current) !important;}
             .BARS_ITEM._DISABLED {cursor:default;opacity:0.5;}
             .BARS_ITEM:first-child {border-top-left-radius:var(--border-radius);border-top-right-radius:var(--border-radius);}
             .BARS_ITEM:last-child {border-bottom-left-radius:var(--border-radius);border-bottom-right-radius:var(--border-radius);}
