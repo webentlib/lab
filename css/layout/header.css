@@ -12,10 +12,10 @@
 }
     .HEADER_LINK {text-decoration:none;display:flex;align-items:center;padding:0 24px;font-weight:var(--semibold);}
     .HEADER_LINK:hover {background:var(--hover);     box-shadow:0 1px 0 hsla(0, 0%, 0%, 0.02);}
-    .HEADER_LINK._Current {background:var(--current);box-shadow:0 1px 0 hsla(0, 0%, 0%, 0.04);}
-    .HEADER_LINK._Opened {background:var(--opened);  box-shadow:0 1px 0 hsla(0, 0%, 0%, 0.06);}
+    .HEADER_LINK._CURRENT {background:var(--current);box-shadow:0 1px 0 hsla(0, 0%, 0%, 0.04);}
+    .HEADER_LINK._OPENED {background:var(--opened);  box-shadow:0 1px 0 hsla(0, 0%, 0%, 0.06);}
     .HEADER_LINK:active {background:var(--active);   box-shadow:0 1px 0 hsla(0, 0%, 0%, 0.08);}
-    .HEADER_LINK._Square {padding:0;width:var(--header-height);display:flex;justify-content:center;flex-shrink:0;}
+    .HEADER_LINK._SQUARE {padding:0;width:var(--header-height);display:flex;justify-content:center;flex-shrink:0;}
 
     .HEADER_MENU {display:flex;overflow-x:auto;}
     .HEADER_USER_MENU {font-size:20px;line-height:24px;font-weight:600;white-space:nowrap;}

@@ -1,13 +1,16 @@
+/* base */
 @import './css/lab.css';
 @import './css/reset.css';
 
+/* common */
 @import './css/form.css';
 @import './css/helpers.css';
 
+/* interactive */
 @import './css/interactive/dropdown.css';
 @import './css/interactive/modal.css';
-@import './css/interactive/bars.css';
 
+/* elements */
 @import './css/elements/hr.css';
 @import './css/elements/counter.css';
 @import './css/elements/legend.css';
@@ -15,10 +18,12 @@
 @import './css/elements/loader.css';
 @import './css/elements/tabs.css';
 
+/* controls */
 @import './css/controls/control.css';
 @import './css/controls/select/select.css';
 @import './css/controls/chips.css';
 
+/* content */
 @import './css/content/table.css';
 @import './css/content/cards.css';
 @import './css/content/highlight.css';
@@ -27,6 +32,7 @@
 
 /* layout */
 /*@import './css/layout.css';*/
+@import './css/layout/bars.css';
 @import './css/layout/header.css';
 @import './css/layout/wrapper.css';
 @import './css/layout/heading.css';
