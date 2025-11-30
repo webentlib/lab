@@ -18,5 +18,5 @@
     .HEADER_LINK._SQUARE {padding:0;width:var(--header-height);display:flex;justify-content:center;flex-shrink:0;}
 
     .HEADER_MENU {display:flex;overflow-x:auto;}
-    .HEADER_USER_MENU {font-size:20px;line-height:24px;font-weight:600;white-space:nowrap;}
+    .LOGO {font-size:20px;line-height:24px;font-weight:600;white-space:nowrap;}
     .HEADER_USER_MENU {margin-left:auto;display:flex;}
