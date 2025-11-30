@@ -1,4 +1,4 @@
-import { getCookie } from '/all.ts';
+import { getCookie } from './cookie.ts';
 
 export function csrf() {
     if (typeof window === 'undefined') {
