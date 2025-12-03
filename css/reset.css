@@ -32,6 +32,8 @@ a:not([href]) {
     a:hover:not(:active) {text-decoration:none !important;}
 }
 
+input[type=file], input[type=file]::file-selector-button {cursor:pointer;} /* https://stackoverflow.com/a/23860302/4117781 */
+
 /* LAYOUT */
 
 html {display:contents;}

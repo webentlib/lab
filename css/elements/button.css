@@ -88,13 +88,14 @@ Now, its not technically convenient, and probably dab from perspective of good d
 /* DISABLED */
 
 .BUTTON:is(._DISABLED, [disabled]) {opacity:0.8;}
-.BUTTON:is(._DISABLED, [disabled], ._NO_PSEUDO) * {cursor:default;}
+.BUTTON:is(._DISABLED, [disabled], ._PSEUDO),
+.BUTTON:is(._DISABLED, [disabled], ._PSEUDO) * {cursor:default;}
 
 /* HOVER / ACTIVE / CURRENT / FOCUS */
 
 @media (hover:hover) {
-.BUTTON:not(._DISABLED, ._NO_PSEUDO, [disabled]):hover  {background-color:var(--button-background-hover);  border-color:var(--button-border-color-hover);  }}
-.BUTTON:not(._DISABLED, ._NO_PSEUDO, [disabled]):active {background-color:var(--button-background-active); border-color:var(--button-border-color-active); }
+.BUTTON:not(._DISABLED, ._PSEUDO, [disabled]):hover  {background-color:var(--button-background-hover);  border-color:var(--button-border-color-hover);  }}
+.BUTTON:not(._DISABLED, ._PSEUDO, [disabled]):active {background-color:var(--button-background-active); border-color:var(--button-border-color-active); }
 .BUTTON:not(._BLUE, ._GREEN, ._RED, ._ORANGE, ._PURPLE, ._DARK):is(._CURRENT, :has([type="radio"]:checked))     {background-color:var(--button-background-current);border-color:var(--button-border-color-current);}
 .BUTTON:focus-visible                                   {--button-outline-width:var(--button-focus-outline-width);}
 
