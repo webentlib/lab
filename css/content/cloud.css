@@ -18,6 +18,7 @@
         border-bottom:var(--control-border-width) solid var(--table-border-color);
         display:flex;
         align-items:center;
+        justify-content:center;
         padding:var(--cloud-space);
         min-height:calc(var(--cloud-space) * 2 + 36px + 1px);
         font-weight:var(--semibold);

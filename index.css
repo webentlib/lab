@@ -17,6 +17,7 @@
 @import './css/elements/button.css';
 @import './css/elements/loader.css';
 @import './css/elements/tabs.css';
+@import './css/elements/separator.css';
 
 /* controls */
 @import './css/controls/control.css';

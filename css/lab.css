@@ -199,7 +199,7 @@
     --table-th-font-weight: var(--semibold);
     --table-line-height: var(--line-height);
     --table-font-size: var(--font-size);
-    --table-sticky-header-z-index: 2;
+    --table-sticky-header-z-index: 3;
     --table-outline-width: 1px;
 
     /* colors */

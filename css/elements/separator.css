@@ -1,0 +1,2 @@
+.SEPARATOR {position:relative;}
+.SEPARATOR:after {content:'';position:absolute;top:var(--cards-space);bottom:var(--cards-space);display:block;width:1px;background:var(--table-border-color);}

@@ -37,7 +37,7 @@
     .CHIP:active {
         background:rgba(255,255,255,0.5);
     }
-    .CHIP:is(._CURRENT, :has([type="radio"]:checked)) {
+    .CHIP:is(._CURRENT, :has(:checked)) {
         background:var(--button-blue);
         border-color:var(--button-blue);
         color:#fff;

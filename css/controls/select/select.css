@@ -82,14 +82,15 @@
     -ms-overflow-style:none;
     line-height:var(--option-height);
 }
-
 .SELECT._ROUNDED._STYLED::picker(select) {border-radius:calc(var(--option-height) / 2);}
+
+.SELECT._STYLED optgroup {font-weight:var(--semibold);color:var(--secondary);}
 
 /* Select */
 .SELECT._STYLED:active, .SELECT._STYLED:active:before {background:var(--hover);}
 
 /* option */
-.SELECT._STYLED option {padding:0 12px 0 4px;min-height:var(--option-height);line-height:var(--option-height);white-space:normal;}
+.SELECT._STYLED option {padding:0 12px 0 4px;color:#000;min-height:var(--option-height);line-height:var(--option-height);white-space:normal;}
 
 :is(.SELECT._STYLED, .SELECT._STYLED option) {display:flex;gap:0;font-size:var(--control-font-size);}
 :is(                 .SELECT._STYLED option):hover {background:var(--hover);}

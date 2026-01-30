@@ -20,9 +20,10 @@
 
 .TABLE._STICKY > *:first-child {position:sticky;top:var(--header-height);z-index:var(--table-sticky-header-z-index);}
 
-.TABLE._DRESSED > thead > tr:nth-child(odd)  > :is(th, td) {background:var(--table-thead-bg);}
+.TABLE._DRESSED > thead > tr:nth-child(odd) > :is(th, td) {background:var(--table-thead-bg);}
 .TABLE._ZEBRA > tbody > tr:nth-child(odd)  > :is(th, td) {background:var(--table-stripe-bg) !important;}
 .TABLE._TIGER > tbody > tr:nth-child(even) > :is(th, td) {background:var(--table-stripe-bg) !important;}
+.TABLE._NOWRAP_EXCEPT_FIRST > :is(thead, tbody, tfoot) > tr > *:not(:first-child) {width:1px;white-space:nowrap;}
 
 /* CELLS */
 

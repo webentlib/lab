@@ -18,3 +18,13 @@ Lab.click_on_enter = function(e) {
     }
 }
 
+Lab.obj_to_search = function(obj) {
+    const joined_params = Object.entries(obj).reduce((result, [key, value]) => {
+        result[key] = Array.isArray(value) ? value.join('-') : value;
+        return result;
+    }, {});
+    const filtered_params = Object.fromEntries(Object.entries(joined_params).filter(([_, v]) => v));
+    const search_params = new URLSearchParams(filtered_params).toString()
+    const search_string = search_params ? '?' + search_params : '';
+    return search_string;
+}

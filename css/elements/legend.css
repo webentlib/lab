@@ -1,2 +1,6 @@
 .LEGENDS {display:flex;flex-wrap:wrap;gap:8px;}
-    .LEGEND {border:1px solid var(--border-color);background:#fff;padding:0 12px;border-radius:var(--border-radius);line-height:36px;}
+.LEGENDS:has(.LEGEND._MINI) {gap:4px;}
+    .LEGEND {border:1px solid var(--interactive-border-color);background:#fff;padding:0 12px;border-radius:var(--border-radius);line-height:34px;text-decoration:none;}
+    a.LEGEND:hover {background:var(--hover);}
+    a.LEGEND:active {background:var(--active);}
+    .LEGEND._MINI {line-height:18px;font-size:calc(var(--button-default-font-size) - 2px);padding:0 4px;}

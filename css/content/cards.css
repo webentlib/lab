@@ -17,24 +17,25 @@
 
     /* Строки в шапке */
     .CARDS > thead > tr {}
-        .CARDS > thead > tr > td {box-shadow:inset 0 calc(var(--table-border-width-y) * -1) 0 var(--table-border-color);}
-        .CARDS > *:last-child > tr:last-child > :is(th, td) {box-shadow:none;}
+        .CARDS > thead > tr > * {box-shadow:inset 0 calc(var(--table-border-width-y) * -1) 0 var(--table-border-color);}
+        .CARDS > *:last-child > tr:last-child > * {box-shadow:none;}
 
         /* Ячейки */
-        .CARDS > :is(thead, tbody, tfoot) > tr > td {padding:var(--cards-space) calc(var(--cards-space) / 2);vertical-align:middle;}
-        .CARDS > :is(thead, tbody, tfoot) > tr > td:first-child {padding-left:var(--cards-space);}
-        .CARDS > :is(thead, tbody, tfoot) > tr > td:last-child {padding-right:var(--cards-space);}
+        .CARDS > :is(thead, tbody, tfoot) > tr > * {padding:var(--cards-space) calc(var(--cards-space) / 2);vertical-align:middle;}
+        .CARDS > :is(thead, tbody, tfoot) > tr > *:first-child {padding-left:var(--cards-space);}
+        .CARDS > :is(thead, tbody, tfoot) > tr > *:last-child {padding-right:var(--cards-space);}
 
         /* Коллапсим всё, кроме первой колонки */
-        .CARDS._NOWRAP_EXCEPT_FIRST > :is(thead, tbody, tfoot) > tr > td:not(:first-child) {width:1px;white-space:nowrap;}
-
-        .CC._SEPARATOR {position:relative;}
-        .CC._SEPARATOR:after {content:'';position:absolute;top:var(--cards-space);bottom:var(--cards-space);display:block;width:1px;background:var(--table-border-color);}
+        .CARDS._NOWRAP_EXCEPT_FIRST > :is(thead, tbody, tfoot) > tr > *:not(:first-child) {width:1px;white-space:nowrap;}
 
         /* Детали */
         .CARDS > tbody > tr:has(.CARD_DETAILS) {border-top:0;}
-            .CARDS > tbody > tr:has(.CARD_DETAILS) > td {padding-top:0;}
-                .CARDS > tbody > tr:has(.CARD_DETAILS) > td > .CARD_DETAILS {
+            .CARDS > tbody > tr:has(.CARD_DETAILS) > * {padding-top:0;}
+                .CARDS > tbody > tr:has(.CARD_DETAILS) > * > .CARD_DETAILS {
                     border-top:1px solid var(--table-border-color);
                     padding-top:var(--cards-space);
                 }
+
+    /* Строки в боди */
+    .CARDS > tbody > tr {}
+        .CARDS > tbody > tr > th {text-align:left;font-weight:var(--semibold);}

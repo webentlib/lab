@@ -15,13 +15,24 @@ try {
 }
 
 function redraw(e, selects=[]) {
+
     if (!selects?.length) {
         selects = get(selectsStore);
     }
 
     for (const select of selects) {
-        select.classList.remove('_STYLED');
-        select.style.removeProperty('min-width');
+        if (!select.classList.contains('_STYLED')) {
+            let computedStyle = window.getComputedStyle(select);
+            let min_width = computedStyle.getPropertyValue('min-width');
+            if (min_width) {
+                select.setAttribute('data-min-width', min_width);
+            }
+        } else if (select.classList.contains('_STYLED')) {
+            let dumped_min_width = select.getAttribute('data-min-width');
+            select.style.setProperty('min-width', dumped_min_width || 'unset');
+            select.classList.remove('_STYLED');
+        }
+
         select.style.minWidth = Math.ceil(select.offsetWidth) * font_expansion_coef + 'px';
         select.classList.add('_STYLED');
         select.disabled = false;
@@ -45,7 +56,7 @@ export function Select(select) {
         return value
     });
 
-    redraw([select]);
+    redraw(null, [select]);
 
     return {
         destroy() {
