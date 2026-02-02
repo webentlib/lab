@@ -29,7 +29,11 @@ function redraw(e, selects=[]) {
             }
         } else if (select.classList.contains('_STYLED')) {
             let dumped_min_width = select.getAttribute('data-min-width');
-            select.style.setProperty('min-width', dumped_min_width || 'unset');
+            if (!['0px', 'auto', 'unset'].includes(dumped_min_width)) {
+                select.style.setProperty('min-width', dumped_min_width || 'unset');
+            } else {
+                select.style.removeProperty('min-width');
+            }
             select.classList.remove('_STYLED');
         }
 
