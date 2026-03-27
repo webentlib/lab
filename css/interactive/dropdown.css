@@ -1,5 +1,5 @@
 .DROPDOWN {position:relative;}
-    .DROPDOWN_WINDOW {position:absolute;top:calc(100% + 1px);left:0;background:#fff;box-shadow:var(--box-shadow);justify-content:stretch;border-radius:var(--border-radius);}
+    .DROPDOWN_WINDOW {position:absolute;top:calc(100% + 1px);left:0;background:#fff;box-shadow:var(--box-shadow);justify-content:stretch;border-radius:var(--border-radius);z-index:5}
     .DROPDOWN_WINDOW._RIGHT {right:0;left:auto;}
         .DROPDOWN_ITEM {display:flex;padding:0 24px;min-height:48px;line-height:24px;white-space:nowrap;text-decoration:none;align-items:center;}
         .DROPDOWN_ITEM:hover {background-color:var(--hover)}

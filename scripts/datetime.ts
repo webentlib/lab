@@ -26,6 +26,8 @@ export function Datetime(date_string, timezone=DatetimeHelper.client_timezone) {
     this.timefull = `${this.hours.PAD(2)}:${this.minutes.PAD(2)}:${this.seconds.PAD(2)}`;
     this.datetime = `${this.date} ${this.time}`;
     this.datetimefull = `${this.date} ${this.timefull}`;
+    this.datecutyear = `${this.day.PAD(2)}.${this.month.PAD(2)} '${this.year % 100}`;
+    this.daymonth = `${this.day.PAD(2)}.${this.month.PAD(2)}`;
 
     const date = new Date(date_string);
 

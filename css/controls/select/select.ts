@@ -39,7 +39,9 @@ function redraw(e, selects=[]) {
 
         select.style.minWidth = Math.ceil(select.offsetWidth) * font_expansion_coef + 'px';
         select.classList.add('_STYLED');
-        select.disabled = false;
+        if (!select.disabled) {
+            select.disabled = false;
+        }
     }
 }
 
@@ -53,7 +55,9 @@ selectsStore.subscribe((value) => {
     }
 })
 
-export function Select(select) {
+export function Select(select, disabled=false) {
+
+    select.disabled = disabled;
 
     selectsStore.update((value) => {
         value.push(select);

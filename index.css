@@ -20,6 +20,7 @@
 @import './css/elements/separator.css';
 
 /* controls */
+@import './css/controls/password.css';
 @import './css/controls/control.css';
 @import './css/controls/select/select.css';
 @import './css/controls/chips.css';

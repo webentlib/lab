@@ -10,7 +10,7 @@
     top:0;
     left:0;
     z-index:10;
-    min-width:calc(100dvw - var(--scrollbar-width));
+    /*min-width:calc(100dvw - var(--scrollbar-width));*/
 }
     .HEADER_LINK {text-decoration:none;display:flex;align-items:center;padding:0 24px;font-weight:var(--semibold);}
     .HEADER_LINK:hover {background:var(--hover);     box-shadow:0 1px 0 hsla(0, 0%, 0%, 0.02);}
