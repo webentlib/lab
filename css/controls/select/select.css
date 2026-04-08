@@ -34,6 +34,9 @@
 .SELECT._SHRINKY {
     width:auto;
 }
+.SELECT._STRETCH {
+    width:100%;
+}
 .SELECT._STYLED {
     padding-right:0;
 }

@@ -32,8 +32,11 @@
 @import './css/content/summary.css';
 @import './css/content/cloud.css';
 
+/* blocks */
+@import './css/blocks.css';
+
 /* layout */
 @import './css/layout.css';
-
+шт
 /* base */
-/*@import './css/layout.css';*/
+@import './css/base.css';

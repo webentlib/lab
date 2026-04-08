@@ -33,9 +33,3 @@ a:not([href]) {
 }
 
 input[type=file], input[type=file]::file-selector-button {cursor:pointer;} /* https://stackoverflow.com/a/23860302/4117781 */
-
-/* LAYOUT */
-
-html, body {height:100%;overflow-x:auto;}
-body {overflow-y:scroll;/*scrollbar-gutter:stable;*/}
-body._SCROLL_DISABLED {overflow:hidden;padding-right:var(--scrollbar-width);}

@@ -33,15 +33,15 @@ function has_scroll(e=null) {
     const HAS_X_SCROLL = document.documentElement.scrollWidth - scrollbar_width > document.documentElement.clientWidth;
 
     if (HAS_Y_SCROLL) {
-        document.body.classList.add('_HAS_Y_SCROLL');
+        document.documentElement.classList.add('_HAS_Y_SCROLL');
     } else {
-        document.body.classList.remove('_HAS_Y_SCROLL');
+        document.documentElement.classList.remove('_HAS_Y_SCROLL');
     }
 
     if (HAS_X_SCROLL) {
-        document.body.classList.add('_HAS_X_SCROLL');
+        document.documentElement.classList.add('_HAS_X_SCROLL');
     } else {
-        document.body.classList.remove('_HAS_X_SCROLL');
+        document.documentElement.classList.remove('_HAS_X_SCROLL');
     }
 }
 
