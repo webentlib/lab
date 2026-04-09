@@ -18,7 +18,7 @@ a)
 Despite `body` has no `overflow`, sticky-element still sticks to it, not `html`.
 Probably the only solution is to stretch `body` to `html`.
 */
-body {min-width:fit-content;} /* no differences observed with `min-content` and `max-content` */
+/*body {min-width:fit-content;} !* no differences observed with `min-content` and `max-content` *!*/
 
 /*
 b)
